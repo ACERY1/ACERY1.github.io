@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017 | 
+            使用Nginx进行反向代理用于解决前端跨域问题 | 
         
         ACERY
     </title>
@@ -35,8 +35,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="description" itemprop="description" content="解决跨域问题">
+    <meta name="keywords" content="kepp it super simple,server">
 
     <!-- Site Verification -->
     
@@ -65,29 +65,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | ACERY">
+    <meta property="og:title" content="使用Nginx进行反向代理用于解决前端跨域问题 | ACERY">
     <meta property="og:image" content="/img/favicon.png" />
-    <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:description" content="解决跨域问题">
+    <meta property="og:article:tag" content="server"> 
 
+    
+        <meta property="article:published_time" content="9月 16, 2017" />
+        <meta property="article:modified_time" content="9月 16, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017 | ACERY">
-    <meta name="twitter:description" content="Talk Is Cheap">
+    <meta name="twitter:title" content="使用Nginx进行反向代理用于解决前端跨域问题 | ACERY">
+    <meta name="twitter:description" content="解决跨域问题">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/archives/2017/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "使用Nginx进行反向代理用于解决前端跨域问题",
+    "url": "http://www.helloyzy.cn/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/index.html",
+    "datePublished": "9月 16, 2017",
+    "dateModified": "9月 16, 2017",
+    "description": "解决跨域问题",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -262,97 +295,243 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
     
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/">使用Nginx进行反向代理用于解决前端跨域问题</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            #使用Nginx进行反向代理用于解决前端跨域问题
-最近写完了静态，准备向后端拿API直接拿数据做渲染测试，但是却因为跨域问题，造成了浏...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>9月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/服务器/">服务器</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                使用Nginx进行反向代理用于解决前端跨域问题
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>9月 16, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/server/">server</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>#使用Nginx进行反向代理用于解决前端跨域问题</p>
+<p>最近写完了静态，准备向后端拿API直接拿数据做渲染测试，但是却因为跨域问题，造成了浏览器无法获取后端获取的数据 具体报错如下：</p>
+<pre><code>XMLHttpRequest cannot load http://www.example.com
+No &apos;Access-Control-Allow-Origin&apos; header
+is    present on the requested resource.
+</code></pre><p>这个问题也一直干扰我很久了，也用过诸如JSONP,后端设置CORS等方法。</p>
+<p><strong>这次最开始的想法是：</strong>因为跨域限制仅存在于浏览器，而真正的后端(java)由于安全考虑是不会设置CORS的，那么我就通过一个node中间层去获取java后端的数据，然后在node设置CROS，这样我前端直接请求node的话，是可以拿到数据的。</p>
+<p>具体的一次request-response为：</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/node-java.png" alt=""></p>
+<ol>
+<li><strong>前端请求node</strong></li>
+<li><strong>node接受请求，并向java请求</strong></li>
+<li><strong>java返回给node数据</strong></li>
+<li><strong>node返回给前端</strong></li>
+</ol>
+<p>当时想着正好可以练下Node，就没有考虑其他更好的解决方案，也马上开始用express搭了一个简陋的node，然后跑了一下，数据能拿到。好的，没问题了。</p>
+<p>接下来的半天继续根据后台的api写着路由，拿数据没有任何的问题，当涉及到登录保存token的时候，<strong>问题终于出现了：</strong></p>
+<p>当写到登录/注册的时候采用的是<strong>token验证</strong>，后端在<code>http response body</code> 里面回传<strong>token</strong>，并且在<code>response header里设置set-cookie</code>，我当然想着<code>node</code>拿到<strong>token</strong>并且在响应前端请求的时候在<code>header</code>里写入<code>set-cookie</code>就可以了，<strong>但是，又出现了跨域问题</strong>：</p>
+<p><strong>先解释下什么<code>同域</code>的要求</strong></p>
+<ol>
+<li>协议相同</li>
+<li>域名相同</li>
+<li>端口相同</li>
+</ol>
+<p>我的node服务在本地的3000端口，前端静态文件服务在1258端口，这就造成了<code>set-cookie</code>因跨域问题而造成的set失败，node无法跨域给1258端口set-cookie，从而无法实现<code>token登录验证</code></p>
+<blockquote>
+<p>（虽然可以通过sessionStorage/localStorage的方法间接实现token认证，但是走到这里，基本上算是小题大作了，杀鸡用了宰牛刀）</p>
+</blockquote>
+<p>没办法只能请教boss了，boss给我介绍了nginx，简直就是跨域问题的大杀器。</p>
+<p><strong>回到正题，nginx是什么</strong></p>
+<p>来自百度百科：<code>Nginx (engine x) 是一个高性能的HTTP和反向代理服务器。</code></p>
+<p><strong>先说说什么是正向/反向代理</strong></p>
+<ol>
+<li><strong>正向代理</strong>：代理网络用户去取得网络信息。形象的说：它是网络信息的中转站。</li>
+<li><strong>反向代理</strong>：代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器。</li>
+</ol>
+<blockquote>
+<p>按照我的理解，正向代理就像是你找一跑腿的帮你取快递而不用自己去，反向代理则像是你给10086打电话的时候，10086帮你分配接线员一样的模式。值得注意的是，正向代理的话，服务器无法知道你的真实IP，反向代理的话，用户是无法知道究竟是哪一台服务器在为他服务。</p>
+</blockquote>
+<p><strong>所以，为什么nginx可以解决跨域问题？</strong></p>
+<p>因为现在我可以这么做：</p>
+<ol>
+<li>让前端路由的所有路径都在<code>~/static/*</code>下，全部转发至前端静态文件的1258端口</li>
+<li>让node的服务放在<code>~/server/*</code>下，也可以直接<code>~/*</code>，全部转发至3000端口</li>
+</ol>
+<p>最后<code>nginx</code>做服务器容器（例如监听80端口）开启的服务使得两者被整合到了同域（因为满足同协议，域名，端口）</p>
+<p><strong>甚至，直接废掉写的node服务</strong></p>
+<ol>
+<li>前端监听端口不变</li>
+<li><code>/*</code>直接代理转发至java后台，根本不存在跨域问题</li>
+</ol>
+<p><strong>配置流程</strong></p>
+<p><a href="http://jingyan.baidu.com/article/fdbd4277d2acfdb89e3f48a3.html" target="_blank" rel="external">网上教程一大堆</a></p>
+<p><strong>配置文件解释</strong></p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/nginx1.png" alt=""></p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/nginx2.png" alt=""></p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
