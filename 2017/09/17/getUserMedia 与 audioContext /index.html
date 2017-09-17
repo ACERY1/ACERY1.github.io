@@ -12,7 +12,7 @@
     
     <title>
         
-            标签: server | 
+            getUserMedia 与 audioContext 实现八分音符酱的音频录入和数据输出 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="description" itemprop="description" content="音视频流">
+    <meta name="keywords" content="kepp it super simple,JavaScript">
 
     <!-- Site Verification -->
     
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: server | ACERY">
+    <meta property="og:title" content="getUserMedia 与 audioContext 实现八分音符酱的音频录入和数据输出 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:description" content="音视频流">
+    <meta property="og:article:tag" content="JavaScript"> 
 
+    
+        <meta property="article:published_time" content="9月 17, 2017" />
+        <meta property="article:modified_time" content="9月 17, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: server | ACERY">
-    <meta name="twitter:description" content="Talk Is Cheap">
+    <meta name="twitter:title" content="getUserMedia 与 audioContext 实现八分音符酱的音频录入和数据输出 | ACERY">
+    <meta name="twitter:description" content="音视频流">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/tags/server/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/17/getUserMedia 与 audioContext /index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "getUserMedia 与 audioContext 实现八分音符酱的音频录入和数据输出",
+    "url": "http://www.helloyzy.cn/2017/09/17/getUserMedia 与 audioContext /index.html",
+    "datePublished": "9月 17, 2017",
+    "dateModified": "9月 17, 2017",
+    "description": "音视频流",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -264,103 +297,259 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#API使用情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">API使用情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MediaDevices-getUserMedia"><span class="post-toc-number">2.</span> <span class="post-toc-text">MediaDevices.getUserMedia()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AudioContext"><span class="post-toc-number">3.</span> <span class="post-toc-text">AudioContext</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#requestAnimationFrame"><span class="post-toc-number">4.</span> <span class="post-toc-text">requestAnimationFrame()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本设计："><span class="post-toc-number">5.</span> <span class="post-toc-text">基本设计：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">6.</span> <span class="post-toc-text">代码实现</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/">使用Nginx进行反向代理用于解决前端跨域问题</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            #使用Nginx进行反向代理用于解决前端跨域问题
-最近写完了静态，准备向后端拿API直接拿数据做渲染测试，但是却因为跨域问题，造成了浏...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>9月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/服务器/">服务器</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                getUserMedia 与 audioContext 实现八分音符酱的音频录入和数据输出
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>9月 17, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>最近几天需要实现一个需求，就是在实现两用户视频通信的基础上，进一步显示其即时的麦克风音量,以及用户可以本地测试自己的麦克风音量。需求和开黑的时候调试自己的麦克风音量类似，只不过实现的环境是浏览器环境以及语言用的是JavaScript。</p>
+<blockquote>
+<p>这个需求让我想起了前段时间比较火的一款安卓游戏：百分音符酱，游戏核心玩法就是通过玩家的声音大小控制小人的跳高距离用于翻越障碍躲避敌人，所以通过以下的实现方式，是能够实现该游戏比较核心的一个部分：声音录入和数据输出</p>
+</blockquote>
+<p>实现效果<br>-</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/test.gif" alt=""></p>
+<p>麦克风音量处获取当前麦克风的输入数据，根据一定的规则转化成progressBar显示。</p>
+<h2 id="API使用情况"><a href="#API使用情况" class="headerlink" title="API使用情况"></a>API使用情况</h2><ul>
+<li><code>MediaDevices.getUserMedia()</code></li>
+<li><code>AudioContext</code></li>
+<li><code>requestAnimationFrame()</code></li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="external">参考MDN</a></p>
+<h2 id="MediaDevices-getUserMedia"><a href="#MediaDevices-getUserMedia" class="headerlink" title="MediaDevices.getUserMedia()"></a>MediaDevices.getUserMedia()</h2><blockquote>
+<p>MediaDevices.getUserMedia()方法提示用户允许使用一个视频和/或一个音频输入设备，例如相机或屏幕共享和/或麦克风。如果用户给予许可，就返回一个Promise 对象，MediaStream对象作为此Promise对象的Resolved［成功］状态的回调函数参数</p>
+</blockquote>
+<p><strong>用该接口为了获取一个音频流(mediaStream)的输入</strong></p>
+<h2 id="AudioContext"><a href="#AudioContext" class="headerlink" title="AudioContext"></a>AudioContext</h2><blockquote>
+<p>AudioContext接口表示由音频模块连接而成的音频处理图，每个模块对应一个AudioNode</p>
+</blockquote>
+<p><strong>用于对音频流进行分析，拿到相关频域数据</strong></p>
+<h2 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame()"></a>requestAnimationFrame()</h2><blockquote>
+<p>window.requestAnimationFrame() 方法告诉浏览器您希望执行动画，并请求浏览器调用指定的函数在下一次重绘之前更新动画。该方法将在重绘之前调用的回调作为参数。<br>如果您想在下一个重绘时为另一个Frame设置动画，您的回调例程必须调用<br>requestAnimationFrame()</p>
+</blockquote>
+<p><strong>设置对音频流的平均采样时间，通过递归调用该接口实现每秒采样60次，即60帧</strong></p>
+<h2 id="基本设计："><a href="#基本设计：" class="headerlink" title="基本设计："></a>基本设计：</h2><p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/arc.png" alt=""></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p><strong>首先的就是音频流的获取</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">let</span> constraints = &#123; </div><div class="line">   	audio: <span class="literal">true</span>, </div><div class="line">   	video: <span class="literal">false</span> </div><div class="line">   &#125;;</div><div class="line">navigator.mediaDevices.getUserMedia(constraints)</div><div class="line">.then(<span class="function">(<span class="params">stream</span>)=&gt;</span>&#123;</div><div class="line">	...</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这段代码在<code>then</code>的回调里面能够拿到用户输入的<code>mediaStream</code>,之后我会在<code>stream</code>后接入分析器，这里设置 <code>video</code>为<code>false</code>的原因是因为我们不需要获得视频流，需要注意的一点是<code>10.*</code>版本（及以下）的<code>Safari</code>并不支持<code>getUserMedia()</code>,具体的各浏览器支持情况如下：</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/version.png" alt=""></p>
+<p><strong>将音频流引入AudioContext并接入分析器</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">....then(<span class="function">(<span class="params">stream</span>)=&gt;</span>&#123;</div><div class="line">         <span class="keyword">let</span> audioCtx = <span class="keyword">new</span> AudioContext() </div><div class="line">         <span class="keyword">let</span> source = audioCtx.createMediaStreamSource(stream) <span class="comment">// 引入音频流</span></div><div class="line">         <span class="keyword">let</span> analyser = audioCtx.createAnalyser() <span class="comment">// 创建分析器</span></div><div class="line">         source.connect(analyser) <span class="comment">// 将stream连接到分析器上</span></div><div class="line">         analyser.fftSize = <span class="number">1024</span> <span class="comment">// 可以理解为设置频率的单位取样宽度</span></div><div class="line">         </div><div class="line">         </div><div class="line">         <span class="keyword">let</span> array = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(analyser.frequencyBinCount); <span class="comment">// 保证长度满足</span></div><div class="line">         analyser.getByteFrequencyData(array) <span class="comment">// 将当前频域数据拷贝进数组 </span></div><div class="line">          ...</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<p>AudioContext的设计风格类似于<code>Pipe-And-Filter</code>，即管道过滤模型，通过对流进行过滤分析实现更多的功能，并且将各功能通过<code>connect</code>连接起来。这里如果再次<code>analyser.connect(audioCtx.destination)</code>就可以把音频流引入扬声器实现即时播放功能。<code>analyser.fftSize</code>可以理解为设置频率平均采样的单位长度。如文档：</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/p1.png" alt=""></p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/p2.png" alt=""></p>
+<p><strong>根据以上的解释，当我设置.fftSize = 32的时候</strong> 取得的数组长度为16</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/ary1.png" alt=""></p>
+<p><strong>设置为1024的时候</strong>，数组长度为512</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/ary2.png" alt=""></p>
+<p><strong>到目前为止，我们已经进行的一次频率的采样了，下一步就是如何根据时间进行平均采样，那么，就必须要用到<code>requestAnimationFrame()</code></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">     <span class="keyword">let</span> onePick = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">         <span class="keyword">var</span> array = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(analyser.frequencyBinCount);</div><div class="line">         analyser.getByteFrequencyData(array); <span class="comment">// 将当前的频率数据传入array</span></div><div class="line">         <span class="built_in">console</span>.log(array);</div><div class="line">         requestAnimationFrame(onePick)</div><div class="line">        &#125; <span class="comment">// 采样函数</span></div><div class="line">        </div><div class="line">        </div><div class="line">       requestAnimationFrame(onePick) <span class="comment">// 开始执行采样</span></div></pre></td></tr></table></figure>
+<p>该onePick函数会每秒执行60次，也就会取60次的样本，然后，我们会拿到一个数组，里面包含了频域的数据，这数据拿来怎么用，就看业务是什么了</p>
+<p>最后看下实现的效果吧（从网上扒了一个canvas绘图的代码）</p>
+<p><img src="https://git.oschina.net/vueman/md_pic/raw/master/technote/yes.png" alt=""></p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/09/17/getUserMedia 与 audioContext /"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -539,6 +728,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
