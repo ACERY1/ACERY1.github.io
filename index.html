@@ -20,6 +20,8 @@
     
     
     
+        <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+    
     
     
     
@@ -291,7 +293,7 @@
 
     <!-- Pic & Slogan -->
     <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
+        <p class="index-top-block-slogan"><a href="/Gallery">
         
             
                 kepp it super simple
@@ -325,7 +327,7 @@
 
     <!-- LOGO -->
     <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
+        <a href="/Gallery" target="_blank">
             <img src="/img/logo.png" alt="logo" />
         </a>
     </div>
@@ -344,6 +346,24 @@
             <span class="visuallyhidden">Pages</span>
         </button>
         <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
+            
+                <a class="index_share-link" href="/Gallery" title="相册">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        相册
+                    </li>
+                </a>
+            
+                <a class="index_share-link" href="/timeline" title="时光">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        时光
+                    </li>
+                </a>
+            
+                <a class="index_share-link" href="/tags" title="标签">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        标签
+                    </li>
+                </a>
             
         </ul>
 
@@ -429,6 +449,12 @@
 
             
 
+            
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span id = "sourceId::2017/09/16/使用Nginx进行反向代理用于解决前端跨域问题/" class = "cy_cmt_count" ></span>条评论
+                </span>
             
 
             <!-- Post Views -->
@@ -553,8 +579,48 @@
 
     <!-- Pages  -->
     
+        <li>
+            <a href="/Gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/timeline" title="时光">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                时光
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
 
     <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">1</span>
+            </a>
+        </li>
+        
     
 </ul>
 
@@ -722,6 +788,11 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdDcOFu">
+</script>
+<!-- 畅言公共 js 代码 end -->
 
 
 
