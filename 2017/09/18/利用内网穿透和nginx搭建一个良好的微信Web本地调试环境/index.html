@@ -12,7 +12,7 @@
     
     <title>
         
-            用nginx配置多个二级域名 | 
+            利用内网穿透和nginx搭建一个良好的微信Web本地调试环境 | 
         
         ACERY
     </title>
@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="转发配置">
+    <meta name="description" itemprop="description" content="开发环境配置">
     <meta name="keywords" content="kepp it super simple,Server">
 
     <!-- Site Verification -->
@@ -67,9 +67,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="用nginx配置多个二级域名 | ACERY">
+    <meta property="og:title" content="利用内网穿透和nginx搭建一个良好的微信Web本地调试环境 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="转发配置">
+    <meta property="og:description" content="开发环境配置">
     <meta property="og:article:tag" content="Server"> 
 
     
@@ -78,15 +78,15 @@
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="用nginx配置多个二级域名 | ACERY">
-    <meta name="twitter:description" content="转发配置">
+    <meta name="twitter:title" content="利用内网穿透和nginx搭建一个良好的微信Web本地调试环境 | ACERY">
+    <meta name="twitter:description" content="开发环境配置">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/18/用nginx配置多个二级域名/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/18/利用内网穿透和nginx搭建一个良好的微信Web本地调试环境/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -112,11 +112,11 @@
         },
         "description": "kepp it super simple"
     },
-    "headline": "用nginx配置多个二级域名",
-    "url": "http://www.helloyzy.cn/2017/09/18/用nginx配置多个二级域名/index.html",
+    "headline": "利用内网穿透和nginx搭建一个良好的微信Web本地调试环境",
+    "url": "http://www.helloyzy.cn/2017/09/18/利用内网穿透和nginx搭建一个良好的微信Web本地调试环境/index.html",
     "datePublished": "9月 18, 2017",
     "dateModified": "9月 18, 2017",
-    "description": "转发配置",
+    "description": "开发环境配置",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://www.helloyzy.cn"
@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nignx-配置文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">nignx 配置文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">2.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#首先，问题的出发点是"><span class="post-toc-number">1.</span> <span class="post-toc-text">首先，问题的出发点是</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题升级"><span class="post-toc-number">2.</span> <span class="post-toc-text">问题升级</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后的解决方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">最后的解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -362,7 +362,7 @@
         
     
             <p class="article-headline-p">
-                用nginx配置多个二级域名
+                利用内网穿透和nginx搭建一个良好的微信Web本地调试环境
             </p>
         </div>
 
@@ -448,41 +448,53 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>一个服务器上当然不可能只放一个服务，那么可以通过配置<code>nginx</code>服务器来实现转发，一般的有</p>
-<ul>
-<li>根据路径转发</li>
-<li>根据端口转发</li>
-</ul>
-<p>但是这两种都有一定的局限性，因为用户不可能自己去记某某服务器上的什么端口下有什么服务，如<code>http://www.helloyzy.cn:1998/test/api</code>,这样的一个URL是不容易被牢记，（开发人员都容易忘）所以我们需要用<code>nginx</code>来配置<code>二级域名</code>。</p>
-<p>使用前提：</p>
-<ul>
-<li>一台（云）服务器</li>
-<li>一个域名</li>
-<li>已装好nginx</li>
-</ul>
-<p>欲实现效果</p>
-<p><img src="https://git.oschina.net/vueman/md_pic/raw/8bb893282799e0b165ef915b1d5bb3efc44f0069/subdomain.png" alt=""></p>
-<p>当访问<code>www.helloyzy.cn</code>，会转发到路径为<code>/srv/www</code>上</p>
-<p>当访问<code>back.helloyzy.cn</code>,会转发到路径为<code>/srv/back</code>上</p>
-<p><strong>踩坑记录</strong></p>
-<blockquote>
-<p>一定要先给域名配置DNS解析，因为我们买来的域名是不带二级域名的，比如 helloyzy.cn，那如果要让别人能访问到<code>www.helloyzy.cn</code>和 <code>back.helloyzy.cn</code>，需要配置一个DNS解析（在服务器的管理界面有）<br>如果不配置，当你<code>ping www.helloyzy.cn</code>，将会提示<code>unknown host</code></p>
+        <p>在开发基于微信的WebApp时,配置一个良好的本地调试环境能够节省不少的开发成本和时间。最次的方案就是每次观察线上版本的bug，然后更改自己本地的代码，再push，打包，上传，部署，然后再次观察，发现bug并没有解决，并继续前者的操作，形成一个恶性循环。这样的开发效率，是极低的，因为大部分的时间全部浪费在上传，打包上。<strong>那么有没有一个更好的方案？</strong></p>
+<p>当然，在开发完成后，有一系列的持续集成工具，如<code>Jenkins</code>和 <code>Daocloud</code>,这些工具或平台可以让你不考虑代码上传之后的事情，一般是通过监听<code>git 仓库</code>的<code>push</code>行为，拉取最新代码，测试，打包，部署。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/663aa05agw1f3azf3lhrdj206a08ogm8.jpg" alt=""> 图为Jenkins</p>
+<p>这些工具的基本使用以后会在另外的文章里仔细展开说明。<strong>这篇博客主要面向的是本地调试环境的配置</strong></p>
+<h2 id="首先，问题的出发点是"><a href="#首先，问题的出发点是" class="headerlink" title="首先，问题的出发点是"></a>首先，问题的出发点是</h2><blockquote>
+<p>“我不可能每次改点样式的bug都需要上传打包然后部署吧”</p>
 </blockquote>
-<h2 id="nignx-配置文件"><a href="#nignx-配置文件" class="headerlink" title="nignx 配置文件"></a>nignx 配置文件</h2><p>一般情况下，所有的配置文件最好存在 <code>/nginx/conf.d</code>里，方便统一管理，在这地方，文件名就取二级域名的前缀，如 <code>service_www.conf</code> 和 <code>service_back.conf</code></p>
-<p><code>service_www.conf</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 80;</div><div class="line">	server_name www.helloyzy.cn;</div><div class="line">	root /srv/www;</div><div class="line">	index index.html index.htm;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>service_back.conf</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 80;</div><div class="line">	server_name back.helloyzy.cn;</div><div class="line">	root /srv/back;</div><div class="line">	index index.html index.htm;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在这里，可能有几个疑问：</p>
+<p><strong>当然，是不用的。</strong></p>
+<p><strong>在没有接入微信服务之前，我们用的是如下的方案，能够高效率的进行开发，而且前后端互不影响进度。</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/wechatLocalEnv/ngrok.png" alt=""></p>
+<p>首先简单介绍下<code>ngrok</code>，大家有兴趣可以去深入了解</p>
+<blockquote>
+<p>ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放</p>
+</blockquote>
+<p><img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=fc28bff79058d109d0eea1e0b031a7da/b21bb051f81986181706330d48ed2e738ad4e6f2.jpg" alt=""></p>
 <ul>
-<li>为什么都是监听80端口，换做其他端口会怎么样？</li>
-<li>两个同时监听80端口，不会冲突吗？</li>
+<li>后端在本地通过<code>ngrok</code>将本地的<code>localhost</code>挂着的服务映射到一个公网域名上。比如访问<code>http://hello.ngrok.com</code>相当于访问后端的<code>localhost:2333</code></li>
+<li>在前端，所有的请求配置的<code>baseURL</code>均是<code>http://hello.ngrok.com</code>，那么前端就能在公网上请求到后端的服务，这样就能在本地做开发调试。而且不受地域限制，因为在没用<code>ngrok</code>之前,开发人员必须处于<code>同一个内网</code>下进行开发。但是现在，就可以远程办公了。也没有一系列打包上传的流程。</li>
 </ul>
-<p>问题一：</p>
-<p>因为当仅仅输入网站URL时，浏览器会默认带上<code>80</code>端口，比如当我们访问<code>www.baidu.com</code>其实是访问的<code>www.baidu.com:80</code>,所以我们设置80端口后，用户只需要输入<code>URL</code>便能够访问到</p>
-<p>问题二：</p>
-<p>主要原因是因为不同域，第一个配置文件监听的是<code>www.helloyzy.com</code>的80端口，而第二个配置文件监听的是<code>back.helloyzy.com</code>的80端口，这两个会被转发到不同的服务上,所以不会互相冲突。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>nginx 可以让我们拥有更多的二级域名，这就更方便我们对服务器上起的服务进行一个更规范，更逻辑化的管理。而这些管理配置是和服务的代码是<code>松耦合</code>的，处于较高层，一个很好的<code>nginx</code>配置规划，将极大的减少我们在代码本身上花的时间，比如<code>解决跨域</code>，<code>代理</code>，<code>转发</code>，<code>提供静态服务</code>等。</p>
+<h2 id="问题升级"><a href="#问题升级" class="headerlink" title="问题升级"></a>问题升级</h2><p>当接入微信服务之后，由于自己的后端也要去请求微信服务获取权限，这就造成了本地开发的时候没有权限，一切的接口就没权限调用的问题。</p>
+<p>一次微信权限授予的过程如图所示</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/wechatLocalEnv/basic.png" alt=""></p>
+<ul>
+<li>微信开发者工具发出请求去请求Server</li>
+<li>Server带着认证相关的数据请求WechatServer</li>
+<li>Wechat认证成功，返回给Server</li>
+<li>Server回调重定向到前端的入口页面。</li>
+</ul>
+<p>如图，如果请求的是<code>www.examples.com/wechat</code>，那么可以理解为，想让<code>www.examples.com</code>获得后端接口的使用权限，那么回调重定向的时候，自然会重定向到<code>www.examples.com</code>,这是微信控制的。</p>
+<p><strong>那么现在，如果要更改代码调试bug，必须打包上传前端代码后放入<code>www.examples.com</code>**</strong>这个域之下，才能获取后端接口进行调试<strong>，</strong>那么又进入恶性循环了。**</p>
+<hr>
+<p><strong>如果在本地发出<code>www.examples.com/wechat</code>这个请求呢？</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/wechatLocalEnv/wrong.png" alt=""></p>
+<p>如图，会在重定向的时候出现错误，如果不更改重定向的URL，当你在<code>localhost</code>调取<code>www.examples.com/wechat</code>接口之后，浏览器就会重定向到<code>www.examples.com</code>，那么不能起到本地调试的目的，如果更改转发，强行跳转到<code>localhost</code>上，会出现权限无法获取的问题，<strong>因为不同域</strong></p>
+<p><strong>本地获取权限调试的功能仍然没有实现。</strong></p>
+<h2 id="最后的解决方案"><a href="#最后的解决方案" class="headerlink" title="最后的解决方案"></a>最后的解决方案</h2><p><strong>采用nginx+ngrok组合的方案</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/wechatLocalEnv/ngrok&amp;nginx.png" alt=""></p>
+<ul>
+<li>因为前端目前的开发配置中一般都带有<code>webpack</code>，那么可以使用其<code>热监听</code>的模块，用<code>node</code>在本地的<code>某端口</code>上起服务，并通过上文所说的<strong>ngrok将其穿透到某公网域名上</strong></li>
+<li>前端发送到<code>http://www.examples.com/wechat</code>的请求，后端接受该请求，并成功授权（前提前端是用的微信开发者工具）。</li>
+<li>后端发送重定向信号（302）给前端（此时重定向URL为<code>http://www.examples.com/index.html)</code></li>
+<li>前端重定向到<code>http://www.examples.com/index.html</code>,因为在服务器上配置了nginx，当服务器接受到这个请求后，将其转发到刚才第一步里的<code>某公网域名</code>，那么最终访问的仍然是自己本地的前端<code>热监听</code>的页面。</li>
+</ul>
+<p><strong>最重要的是</strong> </p>
+<p>从服务器来看，申请授权的是<code>www.examples.com</code>，前端开发者访问的也是<code>www.examples.com</code>，也就是说，这时做本地开发的时候，是能够拿到后端的接口权限的。</p>
+<p><strong>那么就能够在本地调试bug，当bug解决之后，再上传打包部署，解决了最开始提出的那个问题</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从技术角度来看，其实也是用<code>nginx</code>解决的跨域问题，只不过这个地方是因为<code>权限问题</code>造成的，用<code>ngrok</code>的目的是让转发的地址能够被访问到。可以看出，<code>nginx</code>能够解决很多棘手的，难以通过代码实现的问题。</p>
 
     
 
@@ -498,7 +510,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2017/09/18/用nginx配置多个二级域名/"  ></div>
+<div id="SOHUCS" sid="2017/09/18/利用内网穿透和nginx搭建一个良好的微信Web本地调试环境/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = 'cytdDcOFu';
@@ -522,21 +534,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/18/利用内网穿透和nginx搭建一个良好的微信Web本地调试环境/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/09/17/getUserMedia 与 audioContext /" id="post_nav-older" class="next-content">
+        <a href="/2017/09/18/用nginx配置多个二级域名/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
