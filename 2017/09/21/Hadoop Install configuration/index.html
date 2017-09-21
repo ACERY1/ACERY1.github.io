@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: css | 
+            Hadoop 安装和基本环境配置 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="description" itemprop="description" content="开发环境配置">
+    <meta name="keywords" content="kepp it super simple,cloud computing">
 
     <!-- Site Verification -->
     
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: css | ACERY">
+    <meta property="og:title" content="Hadoop 安装和基本环境配置 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:description" content="开发环境配置">
+    <meta property="og:article:tag" content="cloud computing"> 
 
+    
+        <meta property="article:published_time" content="9月 21, 2017" />
+        <meta property="article:modified_time" content="9月 21, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: css | ACERY">
-    <meta name="twitter:description" content="Talk Is Cheap">
+    <meta name="twitter:title" content="Hadoop 安装和基本环境配置 | ACERY">
+    <meta name="twitter:description" content="开发环境配置">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/categories/css/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/21/Hadoop Install configuration/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "Hadoop 安装和基本环境配置",
+    "url": "http://www.helloyzy.cn/2017/09/21/Hadoop Install configuration/index.html",
+    "datePublished": "9月 21, 2017",
+    "dateModified": "9月 21, 2017",
+    "description": "开发环境配置",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -264,102 +297,256 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hadoop-Install-configuration"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hadoop Install configuration</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/19/用Sass构建自己的轻量级UI框架/">用Sass构建自己的轻量级UI框架</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            问题来源
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/19/用Sass构建自己的轻量级UI框架/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>9月 19, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/css/">css</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/19/用Sass构建自己的轻量级UI框架/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Hadoop 安装和基本环境配置
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>9月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/cloud-computing/">cloud computing</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Hadoop-Install-configuration"><a href="#Hadoop-Install-configuration" class="headerlink" title="Hadoop Install configuration"></a>Hadoop Install configuration</h1><p>hadoop 安装与配置<br>-</p>
+<p><strong>Basic:</strong> </p>
+<ul>
+<li><code>java</code> (must download before)</li>
+</ul>
+<p><strong>Download Hadoop：</strong></p>
+<p><a href="">http://hadoop.apache.org/releases.html</a></p>
+<blockquote>
+<p>choose binary version<br>use <code>wget</code> +<code>URL</code> to download file in linux.</p>
+</blockquote>
+<p><strong>Extract：</strong></p>
+<p>After downloaded the file,you will get a <code>hadoop-X.Y.Z-src.tar.gz</code>(X,Y,Z means version)</p>
+<p>use <code>tar -zxvf +filename</code> to <strong>extract</strong> the file. </p>
+<blockquote>
+<p>suguest move file to <code>/etc</code> and <code>rename hadoop</code> </p>
+<p>order: <code>mv hadoop-2.8.1 /etc/hadoop</code></p>
+</blockquote>
+<p><strong>Configure the environment params:</strong></p>
+<p><code>vim ~/.bash_profile</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#hadoop env</span></div><div class="line"><span class="built_in">export</span> HADOOP_HOME=/etc/hadoop</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$HADOOP_HOME</span>/bin:<span class="variable">$PATH</span></div><div class="line"><span class="comment">#java env </span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.8.0_11</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+<p>refresh the profile</p>
+<p><code>source ~/.bash_profile</code></p>
+<p><strong>Verify:</strong></p>
+<p>input <code>hadoop fs -ls</code>,you will get something like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">-rw-r--r--   1 root root          0 2016-04-21 22:18 .autorelabel</div><div class="line">dr-xr-xr-x   - root root      32768 2017-09-21 11:30 bin</div><div class="line">dr-xr-xr-x   - root root       4096 2017-06-06 17:31 boot</div><div class="line">drwxr-xr-x   - root root       4096 2016-04-21 22:18 data</div><div class="line">drwxr-xr-x   - root root       2880 2017-09-21 10:52 dev</div><div class="line">drwxr-xr-x   - root root      12288 2017-09-21 15:06 etc</div><div class="line">drwxr-xr-x   - root root       4096 2017-09-21 11:18 home</div><div class="line">dr-xr-xr-x   - root root       4096 2017-09-16 19:48 lib</div><div class="line">dr-xr-xr-x   - root root      36864 2017-09-21 11:30 lib64</div><div class="line">drwx------   - root root      16384 2016-04-21 15:00 lost+found</div><div class="line">drwxr-xr-x   - root root       4096 2016-11-05 23:38 media</div><div class="line">drwxr-xr-x   - root root       4096 2016-11-05 23:38 mnt</div><div class="line">drwxr-xr-x   - root root       4096 2016-11-05 23:38 opt</div><div class="line">dr-xr-xr-x   - root root          0 2017-09-21 10:52 proc</div><div class="line">dr-xr-x---   - root root       4096 2017-09-21 15:04 root</div><div class="line">drwxr-xr-x   - root root        760 2017-09-21 12:59 run</div><div class="line">dr-xr-xr-x   - root root      20480 2017-09-21 11:30 sbin</div><div class="line">-rw-r--r--   1 root root       5307 2017-09-21 11:14 src</div><div class="line">drwxr-xr-x   - root root       4096 2017-09-17 19:53 srv</div><div class="line">dr-xr-xr-x   - root root          0 2017-09-21 10:52 sys</div><div class="line">drwxrwxrwt   - root root       4096 2017-09-21 15:06 tmp</div><div class="line">drwxr-xr-x   - root root       4096 2017-09-21 15:02 usr</div><div class="line">drwxr-xr-x   - root root       4096 2017-09-21 10:52 var</div></pre></td></tr></table></figure>
+<p>means you configure successfully.</p>
+<p><strong>ADD: install java</strong></p>
+<p><strong>Install java:</strong></p>
+<ul>
+<li>choose version that fits your OS <a href="">http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads1880260.html</a></li>
+<li>extract</li>
+<li>move file to <code>/usr/local</code></li>
+<li>configure env params  in <code>~/.bash_profile</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#java env </span></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk1.8.0_11</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+<p><code>source ~/.bash_profile</code></p>
+<ul>
+<li>test <code>java --version</code> show </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java version <span class="string">"1.8.0_11"</span></div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_11-b12)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.11-b03, mixed mode)</div></pre></td></tr></table></figure>
+<p>means install successfully.</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/09/21/Hadoop Install configuration/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/09/19/用Sass构建自己的轻量级UI框架/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
