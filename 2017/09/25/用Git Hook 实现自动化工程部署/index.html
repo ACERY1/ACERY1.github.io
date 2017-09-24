@@ -12,7 +12,7 @@
     
     <title>
         
-            标签: Server | 
+            用Git Hook 实现自动化工程部署 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="description" itemprop="description" content="自动化">
+    <meta name="keywords" content="kepp it super simple,server">
 
     <!-- Site Verification -->
     
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: Server | ACERY">
+    <meta property="og:title" content="用Git Hook 实现自动化工程部署 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:description" content="自动化">
+    <meta property="og:article:tag" content="server"> 
 
+    
+        <meta property="article:published_time" content="9月 25, 2017" />
+        <meta property="article:modified_time" content="9月 25, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: Server | ACERY">
-    <meta name="twitter:description" content="Talk Is Cheap">
+    <meta name="twitter:title" content="用Git Hook 实现自动化工程部署 | ACERY">
+    <meta name="twitter:description" content="自动化">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/tags/Server/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/25/用Git Hook 实现自动化工程部署/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "用Git Hook 实现自动化工程部署",
+    "url": "http://www.helloyzy.cn/2017/09/25/用Git Hook 实现自动化工程部署/index.html",
+    "datePublished": "9月 25, 2017",
+    "dateModified": "9月 25, 2017",
+    "description": "自动化",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -264,104 +297,269 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#但是"><span class="post-toc-number">1.</span> <span class="post-toc-text">但是</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现在"><span class="post-toc-number">3.</span> <span class="post-toc-text">现在</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始"><span class="post-toc-number">4.</span> <span class="post-toc-text">开始</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/18/用nginx配置多个二级域名/">用nginx配置多个二级域名</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            一个服务器上当然不可能只放一个服务，那么可以通过配置nginx服务器来实现转发，一般的有
-
-根据路...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/18/用nginx配置多个二级域名/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>9月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/服务器/">服务器</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/09/18/用nginx配置多个二级域名/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                用Git Hook 实现自动化工程部署
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>9月 25, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/server/">server</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>在主流的提供<code>git</code>服务的网站上，均会提供一种名为<code>webhook</code>的仓库外围服务。该服务可以处理来自其他客户端(可以理解为本地的仓库)的<code>commit</code>,<code>push</code>操作等，然后向<strong>用户可自定义</strong>地址发送带上<strong>详细上下文</strong>的<code>POST</code>请求。</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/note%20pic/webhooks.png" alt=""></p>
+<blockquote>
+<p>图上的URL是接受地址，可以定义数据的格式以及是否需要用验证码验证等。</p>
+</blockquote>
+<p>这样带来的好处，就是可以实现一些代码更新之后的服务器操作。基本分为以下几个步骤：</p>
+<ol>
+<li>将代码<code>PUSH</code>到远程仓库</li>
+<li>远程仓库接受更新后发送一个<code>POST</code>请求到服务器</li>
+<li>服务器接受请求，运行脚本（诸如打包，编译，运行，更新代码等）</li>
+</ol>
+<p>这样就能实现<strong>代码更新</strong>后的自动化，也是<em>持续集成</em>里面非常重要的一个步骤。</p>
+<h2 id="但是"><a href="#但是" class="headerlink" title="但是"></a>但是</h2><p>有如下几个弊端：</p>
+<ul>
+<li>代码托管在第三方</li>
+<li>钩子(webhook)函数不能够很好的自定义</li>
+<li>不适合服务器内部的处理（即代码仓库和执行操作均在一个服务器上)</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进一步了解<code>Git</code>，发现了<code>Git</code>提供的名为<code>hook</code>的接口</p>
+<p><a href="https://git-scm.com/book/zh/v2/自定义-Git-Git-钩子" target="_blank" rel="external">官方文档链接</a></p>
+<p>该接口提供了一整套<code>git</code>操作之后的触发函数（具体请翻阅文档),触发的机制是<code>git push/commit</code>等操作后去执行<code>.git/hooks/</code>里的<code>shell</code>脚本。</p>
+<blockquote>
+<p>注意，初始化的git仓库已经带有部分shell脚本，命名方式为<code>***.sample</code>,带<code>.sample</code>后缀的脚本是会被<code>git</code>忽略执行的，所以，如果你想让git执行你写的脚本，千万别以<code>.sample</code>后缀命名</p>
+</blockquote>
+<h2 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h2><p><strong>我想拿node脚本实现当仓库代码更新后，自动打包编译，并发邮件通知是否编译完成。</strong></p>
+<blockquote>
+<p>当然，类似于Jekins有一系列持续集成的解决方案，不过个人认为原理基本差不多，弄懂接口出处，自己也能写出适用于业务的集成工作流。</p>
+</blockquote>
+<p><strong>要解决的第一个问题，就是：</strong></p>
+<p><em>我是前端开发者，shell脚本不会写怎么办?</em></p>
+<p>shell是可以指定脚本的解释程序，如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/env node</span></div><div class="line">console.log(<span class="string">"hello"</span>)</div><div class="line">// <span class="built_in">test</span> 文件</div></pre></td></tr></table></figure>
+<p>给<code>test</code>文件添加可执行权限：</p>
+<p><code>chmod +x test</code></p>
+<p>然后运行</p>
+<p><code>./test</code></p>
+<p>输出： <code>hello</code></p>
+<p><strong>所以，只要在头部写入<code>#! /usr/bin/env node</code> 便可以写node脚本用shell来执行</strong>。</p>
+<blockquote>
+<p>同理，python也是如此。</p>
+</blockquote>
+<p><strong>第二个问题：</strong></p>
+<p><em>脚本放哪，如何命名？</em></p>
+<p>命名必须按照文档的命令方式，不同的命名决定脚本在<code>git</code>的不同阶段执行，比如<code>在push之前，push之后 等</code>。</p>
+<p>脚本必须统一放在项目目录下的<code>.git/hooks</code>里。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>根据文档，名为<code>post-receive</code>的脚本，会在仓库收到<code>push</code>事件之后触发执行。</p>
+<p>life is simple, show me the code</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"># 这是名为post-receive的文件存在.git/hooks下</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#! /usr/bin/env node</span></div><div class="line"><span class="keyword">const</span> child_process = <span class="built_in">require</span>(<span class="string">'child_process'</span>)</div><div class="line"><span class="keyword">const</span> nodemailer = <span class="built_in">require</span>(<span class="string">'nodemailer'</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span> transporter = nodemailer.createTransport(&#123;</div><div class="line">    service: <span class="string">'qq'</span>,</div><div class="line">    port: <span class="number">465</span>, <span class="comment">// SMTP 端口</span></div><div class="line">    secureConnection: <span class="literal">true</span>,</div><div class="line">    auth: &#123;</div><div class="line">        user: <span class="string">'******@qq.com'</span>,</div><div class="line">        pass: <span class="string">'*****'</span> <span class="comment">//16位独立验证码</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">let</span> mailOptions = &#123;</div><div class="line">    <span class="keyword">from</span>: <span class="string">'*** &lt;*****@qq.com&gt;'</span>, <span class="comment">// 发件地址</span></div><div class="line">    to: <span class="string">'******@qq.com'</span>, <span class="comment">// 收件列表</span></div><div class="line">    subject: <span class="string">'PUSH EVNETS OCCUR'</span>, <span class="comment">// 标题</span></div><div class="line">    text: <span class="string">'someone push something'</span>, <span class="comment">// 标题</span></div><div class="line">    html: <span class="string">'&lt;b&gt;Hello world ?&lt;/b&gt;'</span> <span class="comment">// html 内容</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> pullFunc = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">		child_process.exec(<span class="string">`git pull origin master`</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)=&gt;</span>&#123;</div><div class="line">			<span class="keyword">if</span>(err)&#123;</div><div class="line">				reject(err)</div><div class="line">			&#125;</div><div class="line">			resolve(<span class="string">'done'</span>)		</div><div class="line">		&#125;)</div><div class="line">	&#125;)</div><div class="line">&#125; <span class="comment">// 执行pull命名 用Promise用于串行化</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> findFunc = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">		child_process.exec(<span class="string">`cd /home/codeRepo`</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)=&gt;</span>&#123;</div><div class="line">			<span class="keyword">if</span>(err)&#123;</div><div class="line">				reject(err)</div><div class="line">			&#125;</div><div class="line">			resolve(<span class="string">'done'</span>)		</div><div class="line">		&#125;)</div><div class="line">	&#125;)</div><div class="line">&#125; <span class="comment">// 找到文件目录</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> buildFunc = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</div><div class="line">		child_process.exec(<span class="string">`npm run build`</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)=&gt;</span>&#123;</div><div class="line">			<span class="keyword">if</span>(err)&#123;</div><div class="line">				reject(err)</div><div class="line">			&#125;</div><div class="line">			resolve(<span class="string">'done'</span>)		</div><div class="line">		&#125;)</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">&#125; <span class="comment">// 运行build</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> sendEmail = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">	transporter.sendMail(mailOptions, <span class="function"><span class="keyword">function</span>(<span class="params">error, info</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(error)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.log(error);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Message sent: '</span> + info.response);</div><div class="line"></div><div class="line">&#125;);</div><div class="line">&#125; <span class="comment">// 发送邮件</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 执行</span></div><div class="line"></div><div class="line">findFunc</div><div class="line">.then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;pullFunc()&#125;)</div><div class="line">.then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;buildFunc()&#125;)</div><div class="line">.then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;sendEmail()&#125;)</div><div class="line">.catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;<span class="built_in">console</span>.err(err)&#125;)</div><div class="line"><span class="comment">// 先进仓库 再pull 再build 最后发送邮件</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的代码属于伪代码，请部分参考</p>
+</blockquote>
+<p>最终实现的是在同一个服务器上自动监听push事件并build代码，最后发送邮件通知开发者。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过<code>git hook</code>，增加了<code>源代码</code>与<code>build流程</code>的关联性，就像是<code>生产的产品</code>和<code>流水线</code>之间的关系一样，现在一旦<code>push</code>代码（代表一次更改），就可以持续地向产品线输出。</p>
+<p>不仅如此，以后还可以在流水线上部署<code>测试</code>的流程，如<code>mocha</code>，这样能很好的提高<code>代码的持续迭代</code>，减少开发后期的<code>等待时间</code>，同时<code>产出的产品</code>也会更加的优质。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/09/25/用Git Hook 实现自动化工程部署/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/09/21/Hadoop Install configuration/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -542,200 +740,12 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/ACERY1" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
 </div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ACERY
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import File -->
-
-
-    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
-    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
-
-
-
-    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-   <!-- 畅言公共 js 代码 start -->
-<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdDcOFu">
-</script>
-<!-- 畅言公共 js 代码 end -->
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Window Load-->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Bing Background -->
-
-
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
-
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
-
-                </main>
-            </div>
-        </body>
-    
-</html>
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
 
                     
 
