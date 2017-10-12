@@ -12,7 +12,7 @@
     
     <title>
         
-            用Sass构建自己的轻量级UI框架 | 
+            用SCSS构建自己的轻量级UI框架 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="css">
-    <meta name="keywords" content="kepp it super simple,css">
+    <meta name="description" itemprop="description" content="CSS">
+    <meta name="keywords" content="kepp it super simple,CSS">
 
     <!-- Site Verification -->
     
@@ -67,19 +67,19 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="用Sass构建自己的轻量级UI框架 | ACERY">
+    <meta property="og:title" content="用SCSS构建自己的轻量级UI框架 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="css">
-    <meta property="og:article:tag" content="css"> 
+    <meta property="og:description" content="CSS">
+    <meta property="og:article:tag" content="CSS"> 
 
     
         <meta property="article:published_time" content="9月 19, 2017" />
-        <meta property="article:modified_time" content="9月 20, 2017" />
+        <meta property="article:modified_time" content="10月 12, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="用Sass构建自己的轻量级UI框架 | ACERY">
-    <meta name="twitter:description" content="css">
+    <meta name="twitter:title" content="用SCSS构建自己的轻量级UI框架 | ACERY">
+    <meta name="twitter:description" content="CSS">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
@@ -112,11 +112,11 @@
         },
         "description": "kepp it super simple"
     },
-    "headline": "用Sass构建自己的轻量级UI框架",
+    "headline": "用SCSS构建自己的轻量级UI框架",
     "url": "http://www.helloyzy.cn/2017/09/19/用Sass构建自己的轻量级UI框架/index.html",
     "datePublished": "9月 19, 2017",
-    "dateModified": "9月 20, 2017",
-    "description": "css",
+    "dateModified": "10月 12, 2017",
+    "description": "CSS",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://www.helloyzy.cn"
@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题来源"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题来源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#处理过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">处理过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最终方案"><span class="post-toc-number">3.</span> <span class="post-toc-text">最终方案</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题来源"><span class="post-toc-number">1.</span> <span class="post-toc-text">问题来源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#why-scss"><span class="post-toc-number">2.</span> <span class="post-toc-text">why scss</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#了解SCSS"><span class="post-toc-number">3.</span> <span class="post-toc-text">了解SCSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最简单的几个例子"><span class="post-toc-number">4.</span> <span class="post-toc-text">最简单的几个例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最终设计方案"><span class="post-toc-number">5.</span> <span class="post-toc-text">最终设计方案</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -362,7 +362,7 @@
         
     
             <p class="article-headline-p">
-                用Sass构建自己的轻量级UI框架
+                用SCSS构建自己的轻量级UI框架
             </p>
         </div>
 
@@ -405,7 +405,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/css/">css</a>
+        <a class="post_tag-link" href="/tags/CSS/">CSS</a>
     </ul>
     
 
@@ -448,9 +448,75 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><h2 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h2><h2 id="最终方案"><a href="#最终方案" class="headerlink" title="最终方案"></a>最终方案</h2><ul>
-<li>基本知识需要</li>
-<li>功能模块划分</li>
+        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><p>这个问题一直可以追溯到最开始学习前端的时候，那时候照着<code>UI</code>的<code>psd</code>设计图，一步步通过<code>HTML+CSS</code>实现样式，因为那时候根本没有抽象和解耦的能力，所以写出来的代码（应该都算不上是代码）没有任何的复用能力。</p>
+<p><strong>比如现在页面上有三个大小不同的容器(container),但是都是内部居中，以前我会这么写</strong>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container1</span>&#123;</div><div class="line">  <span class="attribute">height</span>:<span class="number">100px</span>;</div><div class="line">  <span class="attribute">widht</span>:<span class="number">100px</span>;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>:center; </div><div class="line">  ... other stylesheet   </div><div class="line">&#125;</div><div class="line"> <span class="selector-class">.container2</span>&#123;</div><div class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">  <span class="attribute">widht</span>:<span class="number">200px</span>;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>:center;    </div><div class="line">   ... other stylesheet   </div><div class="line">&#125;</div><div class="line"> <span class="selector-class">.container3</span>&#123;</div><div class="line">  <span class="attribute">height</span>:<span class="number">300px</span>;</div><div class="line">  <span class="attribute">widht</span>:<span class="number">300px</span>;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">justify-content</span>:center;  </div><div class="line">   ... other stylesheet     </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>不得不承认，这样的样式颗粒度是最细的（因为都是独立的），但是在实际开发项目中，样式的组成是<strong>很有规律性的</strong>：</p>
+<ul>
+<li>布局一般都会居中</li>
+<li>字体大小有规定</li>
+<li>颜色会有主色调</li>
+<li><p>圆角，阴影会大量规律地出现</p>
+<p>…</p>
+</li>
+</ul>
+<p>假如按照以上的写法写，后面如果对某一种(类）进行更改，（在产品眼中，这就是改一个参数的事情），那么将会带来的是大量重复的更改时间(毕竟要在每一个里面都去改样式),可能在开发前期，你会因为感觉不同元素的样式相似而大量的<code>复制</code>，<code>粘贴</code>代码而感到非常便捷，不过请相信我，前面<code>Ctrl+C</code>,<code>Ctrl+V</code>的快感必将在后期永无止境的<code>Debug</code>中消失殆尽。</p>
+<p>所以</p>
+<p>放弃带有<strong>Bad Smell</strong>的代码吧，不要因为你写的是样式就不带任何<strong>逻辑和抽象</strong>去编写，不然，真和切图仔无异。</p>
+<h2 id="why-scss"><a href="#why-scss" class="headerlink" title="why scss"></a>why scss</h2><p>但是，由于<code>css</code>本身作为一门”程序语言”是完全不合格的，没有逻辑表达能力，不能按模块加载，没有函数…丧失了作为一门<code>Programing Language</code>最基本的特点，所以，只编写纯<code>CSS</code>是不能满足我们的抽象和规划需求。</p>
+<p><strong>那么，就必须使用<code>SCSS</code></strong>了</p>
+<p><strong>在这里，先声明一下我最终想要实现的效果：</strong></p>
+<p>当我编写HTML的结构的时候(比如建立各个盒子，各个表单等）,我不用写任何一点<code>css</code>，专心搭建结构（搭骨架），如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"./myui.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"l-allmid cust-largbox"</span>&gt;</span></div><div class="line">	    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"o-btn_yellow"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样我就能在预览<code>html</code>的时候，得到一个水平垂直都居中，大小自定义且内部有一个黄色按钮的盒子。</p>
+<blockquote>
+<p>如果你有使用过BootStrap的经验，那么这样的形式你会非常地熟悉，这也是后端偏爱BootStrap的原因吧。毕竟让后端深入编写css样式一般是不可能的。</p>
+</blockquote>
+<p>当然，看到这里，你可能会觉得拿纯css也能写啊。</p>
+<p>是能写，但是我用scss一行代码就能生成写css的10+行代码，岂不是更好吗？（这还只是scss的很小一个功能）</p>
+<h2 id="了解SCSS"><a href="#了解SCSS" class="headerlink" title="了解SCSS"></a>了解SCSS</h2><p>有关详细的scss的用法介绍(API)可以访问以下链接：</p>
+<p><a href="http://www.w3cplus.com/sassguide/syntax.html" target="_blank" rel="external">api</a></p>
+<p>简言之，<code>scss</code>就是能够丰富<code>css</code>的写法(带有编程的逻辑在里面),普通的<code>css</code>无论怎么写，都有种“垒砖头”的重复性工作在里面。</p>
+<p>不过通过<code>scss</code>，就有<code>for循环，函数调用，变量声明，条件判断</code>等一系列编程语言必备的组成元素。</p>
+<p><strong>通过变量的声明，函数的调用，extend，import…的使用，增加了stylesheet的表达能力</strong></p>
+<h2 id="最简单的几个例子"><a href="#最简单的几个例子" class="headerlink" title="最简单的几个例子"></a>最简单的几个例子</h2><p><strong>变量声明</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$white</span>: <span class="number">#fff</span>;</div><div class="line"><span class="variable">$gray-100</span>: <span class="number">#f8f8f8</span> ;</div><div class="line"><span class="variable">$gray-200</span>: <span class="number">#e4e4e4</span> ;</div><div class="line"><span class="variable">$gray-300</span>: <span class="number">#dcdcdc</span> ;</div><div class="line"></div><div class="line"><span class="variable">$header-font-size</span>:<span class="number">28px</span>;</div><div class="line"><span class="variable">$title-font-size</span>:<span class="number">20px</span>;</div><div class="line"></div><div class="line"><span class="variable">$margin-normal</span>:<span class="number">10px</span>;</div><div class="line"><span class="variable">$margin-small</span>:<span class="number">5px</span>;</div><div class="line"></div><div class="line"><span class="variable">$btn-height</span>:<span class="number">20px</span>;</div><div class="line"><span class="variable">$btn-width</span>:<span class="number">20px</span>;</div></pre></td></tr></table></figure>
+<p><strong>变量使用</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.btn_normal</span>&#123;</div><div class="line">    <span class="attribute">color</span>:<span class="variable">$white</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="variable">$btn-height</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="variable">$btn-width</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="variable">$margin-normal</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>函数声明</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> allMidBox &#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">  <span class="attribute">flex-flow</span>: nowrap column;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@<span class="keyword">mixin</span> fontClrSize(<span class="variable">$color</span>,<span class="variable">$size</span>)&#123;</div><div class="line">    <span class="attribute">font-size</span>:<span class="variable">$size</span>;</div><div class="line">	 <span class="attribute">color</span>:<span class="variable">$color</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>函数使用</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.midBtn</span>&#123;</div><div class="line">    @<span class="keyword">include</span> allMidBox;</div><div class="line">    @<span class="keyword">include</span> fontClrSize(<span class="number">#3b3b3b</span>,<span class="number">12px</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>经过编译：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.midBtn</span>&#123;</div><div class="line"> <span class="attribute">display</span>: flex;</div><div class="line"> <span class="attribute">flex-flow</span>: nowrap column;</div><div class="line"> <span class="attribute">justify-content</span>: center;</div><div class="line"> <span class="attribute">align-items</span>: center;</div><div class="line"> <span class="attribute">font-size</span>:<span class="number">12px</span>;</div><div class="line"> <span class="attribute">color</span>:<span class="number">#3b3b3b</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>easy, right? 这还是初级用法。</p>
+</blockquote>
+<h2 id="最终设计方案"><a href="#最终设计方案" class="headerlink" title="最终设计方案"></a>最终设计方案</h2><p>最终我们通过<code>scss</code>编译出来的一个<code>css</code>文件，希望其能够像<code>BootStrap</code>一样，有着好记的<code>class</code>名，开箱即用，同时，规格化的代码组成方式和功能划分能够让开发者更快更好的进行功能扩展和后续开发维护。（谁都不想去维护一个纯css文件）</p>
+<p><strong>基本知识需要</strong></p>
+<ul>
+<li>了解设计模式中的<code>开放封闭原则</code>，<code>依赖颠倒原则</code>，<code>单一职责原则</code>和<code>迪米特法则</code>。有这四个原则，能增加代码的可塑性和可维护性。 （个人认为设计模式对于前端工程化特别重要，而这四个法则是各种设计模式的参照标准，请自行学习）  </li>
+<li>一定的css基础。</li>
+<li>scss语法的基本使用。</li>
+<li>有一定的编程能力。(Real coding not <strong>simple</strong> html or css)</li>
+</ul>
+<p><strong>区分出变量和常量</strong></p>
+<p>个人将数据的类型分为了两种</p>
+<p><strong>static</strong>：根据业务需求定义的，诸如<code>主色调</code>，<code>不同作用的文字的大小和颜色</code>，<code>媒体查询断点</code>,<code>按钮的圆角，阴影</code>,这些根据不同的业务需求一次定义，全局使用。为什么是<code>static</code>，因为这对于框架的使用者是不会去在使用过程中修改的，而是在使用前定义的且不会轻易去变动的(通常一变动就会产生大变动）,而<code>static</code>对于框架来说却是<code>variables</code>，<strong>这一点一定要弄明白</strong></p>
+<p><strong>variables</strong>：这些变量是划分在框架外部的，因为框架不可能实现所有的样式，根据<code>渐进增强</code>的原理，会结合<code>框架基础样式+自定义样式</code>形成自己的业务样式，那么这些写在一个个独立css文件里的样式，就叫做<code>variables</code>。</p>
+<p>如</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"myui_box box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    box1 &#123;</span></div><div class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></div><div class="line"><span class="undefined">        width:100px; // 这些地方的100px就是variables </span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>假设scss里有写</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$yellow</span>: <span class="number">#3b3b3b</span>; <span class="comment">//这就是static</span></div><div class="line"><span class="variable">$black</span>: <span class="number">#b3b3b3b</span>;</div><div class="line"><span class="variable">$border-normal</span>: <span class="number">10px</span>;</div><div class="line"></div><div class="line">@<span class="keyword">mixin</span> bg&amp;border(<span class="variable">$color</span>,<span class="variable">$border</span>)&#123;</div><div class="line">    <span class="attribute">background</span>:<span class="variable">$color</span>;</div><div class="line">    <span class="attribute">border</span>:<span class="variable">$border</span> solid <span class="variable">$black</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.myui_box</span>&#123;</div><div class="line">    @<span class="keyword">include</span> bg&amp;border(<span class="variable">$yellow</span>,<span class="variable">$border-normal</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>渐进式</strong></p>
+<p>因为样式可以相互重叠，就让<code>渐进式</code>大放异彩，同时结合 <code>单一职责原则</code>，可以实现样式的组件化。一个很好的例子：</p>
+<blockquote>
+<p>一个按钮的样式？你会用scss如何去写？</p>
+</blockquote>
+<p>我的想法是：</p>
+<p>按钮一般会去定义<code>background</code>，<code>border</code>，<code>border-radius</code>,<code>font-size</code><br>,<code>color</code>,<code>box-shadow</code></p>
+<ul>
+<li>功能模块划分<br>  图片here</li>
 <li>变量功能划分</li>
 <li>BEM命名法</li>
 <li>全局命名空间</li>
@@ -604,7 +670,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/cloud/">cloud<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/开发环境配置/">开发环境配置<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/cloud/">cloud<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/开发环境配置/">开发环境配置<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
