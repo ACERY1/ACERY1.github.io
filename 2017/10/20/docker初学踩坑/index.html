@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="10月 20, 2017" />
-        <meta property="article:modified_time" content="10月 20, 2017" />
+        <meta property="article:modified_time" content="10月 21, 2017" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "Docker学习 Chapter-1",
     "url": "http://www.helloyzy.cn/2017/10/20/docker初学踩坑/index.html",
     "datePublished": "10月 20, 2017",
-    "dateModified": "10月 20, 2017",
+    "dateModified": "10月 21, 2017",
     "description": "虚拟化实现硬件与操作系统的解耦,完成了操作系统到硬件的多对多映射，使得硬件与操作系统都具有可替换性",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从问题谈起："><span class="post-toc-number">1.</span> <span class="post-toc-text">从问题谈起：</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从问题谈起："><span class="post-toc-number">1.</span> <span class="post-toc-text">从问题谈起：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从零开始学习Docker"><span class="post-toc-number">2.</span> <span class="post-toc-text">从零开始学习Docker</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Docker客户端"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装Docker客户端</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动docker服务-后面均是以centos做讲解"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">启动docker服务(后面均是以centos做讲解)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从”dockerhub”下载应用镜像"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">从”dockerhub”下载应用镜像</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -476,9 +476,30 @@
 <blockquote>
 <p>Docker is the company driving the container movement and the only container platform provider to address every application across the hybrid cloud. Today’s businesses are under pressure to digitally transform but are constrained by existing applications and infrastructure while rationalizing and increasingly diverse portfolio of clouds, datacenters and application architectures. <strong>Docker enables true independence between applications and infrastructure and developers and IT ops to unlock their potential and creates a model for better collaboration and innovation.</strong><br>(Docker在应用程序、基础设施和开发人员之间实现了真正的独立性，并为开发人员提供了一种更好的协作和创新的模式。)</p>
 </blockquote>
-<p>目前我的理解是，<code>docker</code>可以理解为一个多样化的虚拟机(事实上和虚拟机的实现方式不同)，它不止可以虚拟操作系统，还能虚拟各种开发环境和软件</p>
+<p>目前我的理解是，<code>docker</code>可以理解为一个多样化的虚拟机(事实上和虚拟机的实现方式不同)，它不止可以虚拟操作系统，还能虚拟各种开发环境和软件，而这些和服务器上的其他环境是完全隔离的(<strong>不用配置若干环境变量</strong>等)。</p>
+<h2 id="从零开始学习Docker"><a href="#从零开始学习Docker" class="headerlink" title="从零开始学习Docker"></a>从零开始学习Docker</h2><blockquote>
+<p>目前主要是实践为主，不会大量涉及到原理,性能分析上的解释，具体的原理浅析会在后续的章节慢慢给出。</p>
+</blockquote>
+<h3 id="安装Docker客户端"><a href="#安装Docker客户端" class="headerlink" title="安装Docker客户端"></a>安装Docker客户端</h3><p>从<a href="https://www.docker.com" target="_blank" rel="external">官网</a>下载适合自己操作系统的客户端：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/屏幕快照%202017-10-20%20下午10.38.31.png" alt=""></p>
+<p><strong>如果服务器是<code>centos</code>，可以直接<code>yum install docker</code></strong></p>
+<h3 id="启动docker服务-后面均是以centos做讲解"><a href="#启动docker服务-后面均是以centos做讲解" class="headerlink" title="启动docker服务(后面均是以centos做讲解)"></a>启动docker服务(后面均是以centos做讲解)</h3><p>命令 ：<code>service docker start</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@<span class="built_in">test</span> node]<span class="comment"># service docker start</span></div><div class="line">Redirecting to /bin/systemctl start  docker.service</div></pre></td></tr></table></figure>
+<p>在某些方面上，docker类似于git，如下图：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/屏幕快照%202017-10-20%20下午10.43.59.png" alt=""></p>
+<p>本地(服务器上)安装的只是一个客户端，如果要让<code>docker</code>运行其他内容，则需要将<code>Image</code>pull到本地，这个步骤有点类似于<code>git clone</code>，而<code>docker</code>中的镜像(images）对应git就是<code>github</code>上的仓库，<code>github</code>对应到<code>docker</code>上是<a href="https://hub.docker.com" target="_blank" rel="external">https://hub.docker.com</a></p>
+<h3 id="从”dockerhub”下载应用镜像"><a href="#从”dockerhub”下载应用镜像" class="headerlink" title="从”dockerhub”下载应用镜像"></a>从”dockerhub”下载应用镜像</h3><p>打开上面提到的网站：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/offcie.png" alt=""></p>
+<p><strong>这些是官方提供的镜像，作为示例，我们选择其中的<code>Ubuntu</code>镜像：</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/cmd.png" alt=""></p>
+<p>右上方提供的是<code>pull command</code> -&gt; <code>docker pull ubuntu</code></p>
+<p>对于镜像，分为两种</p>
 <ul>
-<li>service docker start</li>
+<li>官方镜像，直接<code>docker pull +镜像名</code> 比如 <code>docker pull node</code></li>
+<li>用户镜像，需要<code>docker pull +用户名/镜像名</code> 比如 <code>docker pull Smith/Hadoop</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@<span class="built_in">test</span> ~]<span class="comment"># docker pull ubuntu</span></div><div class="line">Using default tag: latest</div><div class="line">Trying to pull repository docker.io/library/ubuntu ...</div><div class="line">latest: Pulling from docker.io/library/ubuntu</div><div class="line">ae79f2514705: Pull complete</div><div class="line">5ad56d5fc149: Pull complete</div><div class="line">170e558760e8: Pull complete</div><div class="line">395460e233f5: Pull complete</div><div class="line">6f01dc62e444: Pull complete</div><div class="line">Digest: sha256:506e2d5852de1d7c90d538c5332bd3cc33b9cbd26f6ca653875899c505c82687</div></pre></td></tr></table></figure>
+<ul>
 <li>docker pull <em>*</em></li>
 <li>docker run</li>
 <li>docker ps</li>
