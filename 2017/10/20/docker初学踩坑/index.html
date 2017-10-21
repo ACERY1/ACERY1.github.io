@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从问题谈起："><span class="post-toc-number">1.</span> <span class="post-toc-text">从问题谈起：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从零开始学习Docker"><span class="post-toc-number">2.</span> <span class="post-toc-text">从零开始学习Docker</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Docker客户端"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装Docker客户端</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动docker服务-后面均是以centos做讲解"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">启动docker服务(后面均是以centos做讲解)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从”dockerhub”下载应用镜像"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">从”dockerhub”下载应用镜像</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从问题谈起："><span class="post-toc-number">1.</span> <span class="post-toc-text">从问题谈起：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从零开始学习Docker"><span class="post-toc-number">2.</span> <span class="post-toc-text">从零开始学习Docker</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Docker客户端"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装Docker客户端</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动docker服务-后面均是以centos做讲解"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">启动docker服务(后面均是以centos做讲解)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从”dockerhub”下载应用镜像"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">从”dockerhub”下载应用镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打开镜像"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">打开镜像</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一些常用操作"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">一些常用操作</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -499,15 +499,41 @@
 <li>用户镜像，需要<code>docker pull +用户名/镜像名</code> 比如 <code>docker pull Smith/Hadoop</code></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@<span class="built_in">test</span> ~]<span class="comment"># docker pull ubuntu</span></div><div class="line">Using default tag: latest</div><div class="line">Trying to pull repository docker.io/library/ubuntu ...</div><div class="line">latest: Pulling from docker.io/library/ubuntu</div><div class="line">ae79f2514705: Pull complete</div><div class="line">5ad56d5fc149: Pull complete</div><div class="line">170e558760e8: Pull complete</div><div class="line">395460e233f5: Pull complete</div><div class="line">6f01dc62e444: Pull complete</div><div class="line">Digest: sha256:506e2d5852de1d7c90d538c5332bd3cc33b9cbd26f6ca653875899c505c82687</div></pre></td></tr></table></figure>
+<h3 id="打开镜像"><a href="#打开镜像" class="headerlink" title="打开镜像"></a>打开镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@<span class="built_in">test</span> ~]<span class="comment"># ls</span></div><div class="line">anaconda-ks.cfg  n  n.pub</div><div class="line">[root@<span class="built_in">test</span> ~]<span class="comment"># docker run -it ubuntu</span></div><div class="line">root@6d3c84d4df8f:/<span class="comment"># ls</span></div><div class="line">bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var</div></pre></td></tr></table></figure>
+<p><code>root@6d3c84d4df8f</code>则是打开的<code>docker</code>容器内部的<code>shell</code>而非服务器的shell</p>
+<p>参数解释：</p>
 <ul>
-<li>docker pull <em>*</em></li>
-<li>docker run</li>
-<li>docker ps</li>
-<li>docker images</li>
-<li>docker stop $(docker ps -a -q)</li>
-<li>docker rm $(docker ps -a -q)</li>
-<li>docker rmi <image id=""></image></li>
+<li><code>-i</code> 让容器的标准输入保持打开,上面则是进入了<code>ubuntu</code>的交互界面(shell)</li>
+<li><code>-t</code> 让docker分配一个伪终端并绑定到容器的标准输入上</li>
 </ul>
+<blockquote>
+<p>按照上面的步骤，我们成功打开了一个Ubuntu 的 images，并可以在上面进行后续操作。</p>
+</blockquote>
+<h3 id="一些常用操作"><a href="#一些常用操作" class="headerlink" title="一些常用操作"></a>一些常用操作</h3><ul>
+<li>从远程<code>PULL</code>docker：<code>docker pull ****</code></li>
+<li>运行docker： <code>docker run +参数 +镜像名</code></li>
+<li>查看系统正在运行的docker：<code>docker ps</code> </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@yzy_tencent ~]<span class="comment"># docker ps</span></div><div class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</div><div class="line">a33416102a21        ubuntu              <span class="string">"/bin/bash"</span>         9 seconds ago       Up 6 seconds                            condescending_ramanujan</div></pre></td></tr></table></figure>
+<ul>
+<li>查看本地的镜像：<code>docker images</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@yzy_tencent ~]<span class="comment"># docker images</span></div><div class="line">REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE</div><div class="line">docker.io/node          latest              badd967af535        9 days ago          671.6 MB</div><div class="line">docker.io/ubuntu        latest              747cb2d60bbe        10 days ago         122 MB</div><div class="line">docker.io/hello-world   latest              05a3bd381fc2        5 weeks ago         1.84 kB</div></pre></td></tr></table></figure>
+<ul>
+<li>关闭所有的docker：<code>docker stop $(docker ps -a -q)</code></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@yzy_tencent ~]<span class="comment"># docker ps</span></div><div class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</div><div class="line">a33416102a21        ubuntu              <span class="string">"/bin/bash"</span>         9 seconds ago       Up 6 seconds                            condescending_ramanujan</div><div class="line">[root@yzy_tencent ~]<span class="comment"># docker stop $(docker ps -a -q)</span></div><div class="line">a33416102a21</div><div class="line">6d3c84d4df8f</div><div class="line">9c45b6f93475</div><div class="line">dbcd16977b68</div><div class="line">7d6013cc988a</div><div class="line">f061e4a8e049</div><div class="line">[root@yzy_tencent ~]<span class="comment"># docker ps</span></div><div class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</div></pre></td></tr></table></figure>
+<ul>
+<li><p>删除所有的docker: <code>docker rm $(docker ps -a -q)</code></p>
+</li>
+<li><p>删除镜像: <code>docker rmi &lt;image id&gt;</code></p>
+</li>
+<li><p>搜索可用的docker：<code>docker search +dockerName</code></p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@yzy_tencent ~]<span class="comment"># docker search hadoop</span></div><div class="line">INDEX       NAME                                       DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</div><div class="line">docker.io   docker.io/sequenceiq/hadoop-docker         An easy way to try Hadoop                       486                  [OK]</div><div class="line">docker.io   docker.io/sequenceiq/hadoop-ubuntu         An easy way to try Hadoop on Ubuntu             42                   [OK]</div><div class="line">docker.io   docker.io/uhopper/hadoop                   Base Hadoop image with dynamic configurati...   39                   [OK]</div></pre></td></tr></table></figure>
+<p>###CAP1 Summary</p>
+<p>个人感觉docker在一定程度上很类似于gitrepo的思想，最初的docker是基础的(可以是空),大家共同修改同一<code>docker</code>，并保存快照<code>images</code>,上传到<code>&quot;dockerhub&quot;</code>上，大家都能看到并能<code>pull</code>。目前<code>docker</code>，<code>images</code>，<code>container</code>这几个概念没有进行区分，下一章主要内容是<code>用docker搭建node.js</code>和<code>简单理解docker容器与镜像</code></p>
 
     
 
