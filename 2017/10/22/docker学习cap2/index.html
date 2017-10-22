@@ -12,7 +12,7 @@
     
     <title>
         
-            Docker学习 Chapter-2  docker设计浅析和用docker部署node应用 | 
+            Docker学习 Chapter-2  docker设计浅析 | 
         
         ACERY
     </title>
@@ -67,18 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Docker学习 Chapter-2  docker设计浅析和用docker部署node应用 | ACERY">
+    <meta property="og:title" content="Docker学习 Chapter-2  docker设计浅析 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
     <meta property="og:description" content="Talk Is Cheap">
     <meta property="og:article:tag" content="虚拟化"> 
 
     
         <meta property="article:published_time" content="10月 22, 2017" />
-        <meta property="article:modified_time" content="10月 22, 2017" />
+        <meta property="article:modified_time" content="10月 23, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="Docker学习 Chapter-2  docker设计浅析和用docker部署node应用 | ACERY">
+    <meta name="twitter:title" content="Docker学习 Chapter-2  docker设计浅析 | ACERY">
     <meta name="twitter:description" content="Talk Is Cheap">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
@@ -112,10 +112,10 @@
         },
         "description": "kepp it super simple"
     },
-    "headline": "Docker学习 Chapter-2  docker设计浅析和用docker部署node应用",
+    "headline": "Docker学习 Chapter-2  docker设计浅析",
     "url": "http://www.helloyzy.cn/2017/10/22/docker学习cap2/index.html",
     "datePublished": "10月 22, 2017",
-    "dateModified": "10月 22, 2017",
+    "dateModified": "10月 23, 2017",
     "description": "Talk Is Cheap",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">简单介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Image-与-Container"><span class="post-toc-number">2.</span> <span class="post-toc-text">Image 与 Container</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存修改与commit"><span class="post-toc-number">3.</span> <span class="post-toc-text">保存修改与commit</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#与Git使用流程最对比"><span class="post-toc-number">4.</span> <span class="post-toc-text">与Git使用流程最对比</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Summary"><span class="post-toc-number">5.</span> <span class="post-toc-text">Summary</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -362,7 +362,7 @@
         
     
             <p class="article-headline-p">
-                Docker学习 Chapter-2  docker设计浅析和用docker部署node应用
+                Docker学习 Chapter-2  docker设计浅析
             </p>
         </div>
 
@@ -448,7 +448,37 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>在上一章里面，一直提到了几个名字 <code>Images</code>，<code>Container</code>，<code>Docker</code>，但是没有把这几者的区别阐述明白，这章将针对以上名词进行解释。之后有一个实践例子，是基于<code>docker</code>部署<code>node</code>的应用，也会初次涉及到<code>DockerFile</code></p>
+        <h3 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h3><p>在上一章里面，一直提到了几个名字 <code>Images</code>，<code>Container</code>，<code>Docker</code>，但是没有把这几者的区别阐述明白，这章将针对以上名词进行解释。之后有一个实践例子，是基于<code>docker</code>部署<code>node</code>的应用，也会初次涉及到<code>DockerFile</code>。</p>
+<h3 id="Image-与-Container"><a href="#Image-与-Container" class="headerlink" title="Image 与 Container"></a>Image 与 Container</h3><p>还记得上一章运行的<code>docker pull node</code>命令吗，该命令的作用就是从<code>http://hub.docker.com</code>下载node镜像。</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/download.png" alt=""></p>
+<p>从远程下载的，就是下载的镜像<code>Image</code>，并存放到了本地。是对远程仓库镜像的一个拷贝。</p>
+<p><strong>Image</strong></p>
+<p>你可以将其理解成为若干文件封装后的一个集合，而这个集合，有一个很重要的特点，就是<code>READ ONLY</code>:只可以读取，不能直接对<code>Image</code>进行操作。而且<code>Image</code>是一个多层(mutiple layer)结果的，类似于一个<code>链表</code>结果，每个结点的指针都执行更旧的<code>layer</code>,而这个<code>链表</code>的形成，是一次次<code>commit</code>形成的。(之后会再次提到)</p>
+<p><strong>Container</strong></p>
+<p>既然不能直接对<code>Image</code>做修改，那么怎么才能基于<code>docker</code>做开发呢(比如下载了node环境docker但是想往docker上部署<code>express</code>应用),这个时候就需要基于最新层的<code>Image Layer</code>复制并创建出来一个<code>Container</code>，而这个<code>Container</code>，是<code>Read And Wirite</code>可读可写的。这样就能往上写自己的内容。如图所示：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/createConta.png" alt=""></p>
+<p>图中逐级向下指的箭头就是指针。版本的新旧程度自顶向下更旧。所以每次<code>docker create</code>出来的<code>Container</code>是基于最新的<code>Image</code>的。</p>
+<p><strong>需要注意的是，目前我们只是为了进行修改copy了<code>Image</code>的文件，产生了一个<code>Container</code>，但是实际上这个<code>Container</code>并没有运行，必须由进程给其分配资源(cpu,memory..)才能运行。学过操作系统的都知道，进程是程序的一次执行，所以Container实际上就是一些File or Code，只有当它运行在进程内才算是运行态。</strong></p>
+<p>如：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/run%20container.png" alt=""></p>
+<p>所以总结一下<code>Image</code>，<code>Container</code>，<code>Running Container</code>，并结合命令来看，是：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/layer.png" alt=""></p>
+<ul>
+<li>Image Layer 只读</li>
+<li>Container 创建了可写层</li>
+<li>Running Container 是Container上面有进程(线程)在时刻运行着</li>
+</ul>
+<p><strong>命令上是</strong></p>
+<p><strong><code>docker run = docker create + docker start</code></strong></p>
+<h3 id="保存修改与commit"><a href="#保存修改与commit" class="headerlink" title="保存修改与commit"></a>保存修改与commit</h3><p>假设现在我在<code>Container</code>完成了我想要的功能，这个时候我希望别人拿到的<code>docker</code>是最新的，那么也就是说是<strong>让当前的Container变成最上层的<code>Image</code></strong>。使用的就是<code>docker commit</code>命令。</p>
+<p><strong><code>docker commit +Container ID + /username/imageName</code></strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/commit.png" alt=""></p>
+<p>这样就会在<code>Image</code>这个单链表的末尾插入一个新的结点，而这个结点，当然也只是<code>READ ONLY</code>的，所以，这就形成了一个新版的<code>Image</code>。通过<code>docker push  /username/imageName</code>就可以发布新镜像到远程上，这样别人就能通过远程仓库下载到最新的镜像。</p>
+<blockquote>
+<p>相信熟练使用git的读者已经看出了git与docker在设计上的相似程度了。</p>
+</blockquote>
+<h3 id="与Git使用流程最对比"><a href="#与Git使用流程最对比" class="headerlink" title="与Git使用流程最对比"></a>与Git使用流程最对比</h3><p>此处缺图！</p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>不得不说docker在设计上参考了Git，这样的设计能更好的推动docker的蓬勃发展(Open Source),在理解了<code>Image</code>，<code>Container</code>的概念并结合<code>Git</code>的使用方法进行对比，才能够真正的明白一些命令的真正作用。</p>
 
     
 
