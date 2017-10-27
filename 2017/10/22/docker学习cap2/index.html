@@ -474,6 +474,8 @@
 <p><strong><code>docker commit +Container ID + /username/imageName</code></strong></p>
 <p><img src="https://gitee.com/vueman/md_pic/raw/master/docker/commit.png" alt=""></p>
 <p>这样就会在<code>Image</code>这个单链表的末尾插入一个新的结点，而这个结点，当然也只是<code>READ ONLY</code>的，所以，这就形成了一个新版的<code>Image</code>。通过<code>docker push  /username/imageName</code>就可以发布新镜像到远程上，这样别人就能通过远程仓库下载到最新的镜像。</p>
+<p><strong>需要注意的是，commit是基于原本的Image产生新的Image，如下所示：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">产生镜像</div><div class="line"></div><div class="line">[root@yzy_tencent system]<span class="comment"># docker commit 9ee0 learn/ping</span></div><div class="line">sha256:1bcb569b2d2d08fdcd9b86754fe9c277bb2bd77b90e40c1fc07ee3a37fb9f848</div><div class="line"></div><div class="line"></div><div class="line">[root@yzy_tencent system]<span class="comment"># docker images</span></div><div class="line">REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE</div><div class="line"></div><div class="line">learn/ping                 latest              1bcb569b2d2d        28 seconds ago      139.5 MB</div><div class="line">该镜像就是产生的新镜像，而不是去覆盖已经下载好的原来的镜像</div><div class="line"></div><div class="line"></div><div class="line">docker.io/node             latest              badd967af535        10 days ago         671.6 MB</div><div class="line">docker.io/ubuntu           latest              747cb2d60bbe        12 days ago         122 MB</div><div class="line">docker.io/hello-world      latest              05a3bd381fc2        5 weeks ago         1.84 kB</div><div class="line">docker.io/learn/tutorial   latest              a7876479f1aa        4 years ago         128 MB</div></pre></td></tr></table></figure>
 <blockquote>
 <p>相信熟练使用git的读者已经看出了git与docker在设计上的相似程度了。</p>
 </blockquote>
@@ -524,7 +526,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/20/docker学习cap1/" id="post_nav-older" class="next-content">
+        <a href="/2017/10/22/docker学习cap3/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -619,7 +621,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/cloud/">cloud<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习/">学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/开发环境配置/">开发环境配置<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/cloud/">cloud<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习/">学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/开发环境配置/">开发环境配置<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -665,7 +667,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">12</span>
+                <span class="sidebar-badge">13</span>
             </a>
         </li>
         
