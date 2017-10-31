@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是mongose"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是mongose</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接数据库"><span class="post-toc-number">2.</span> <span class="post-toc-text">连接数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建schema"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建schema</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是mongose"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是mongose</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接数据库"><span class="post-toc-number">2.</span> <span class="post-toc-text">连接数据库</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建schema"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建schema</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实例化model"><span class="post-toc-number">4.</span> <span class="post-toc-text">实例化model</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查"><span class="post-toc-number">5.</span> <span class="post-toc-text">查</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删"><span class="post-toc-number">6.</span> <span class="post-toc-text">删</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#改"><span class="post-toc-number">7.</span> <span class="post-toc-text">改</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增"><span class="post-toc-number">8.</span> <span class="post-toc-text">增</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -448,7 +448,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>为了方便查询和记忆mongose常用方法的cheatsheet。<br>Mongoose是在node.js环境下对mongodb进行便捷操作的对象模型工具</p>
+        <p>为了方便查询和记忆mongose常用方法的cheatsheet。该cheatSheet不会讲关于原理上的内容，<code>only for using.</code><br>Mongoose是在node.js环境下对mongodb进行便捷操作的对象模型工具</p>
 <h2 id="什么是mongose"><a href="#什么是mongose" class="headerlink" title="什么是mongose"></a>什么是mongose</h2><blockquote>
 <p>Mongoose是在node.js环境下对mongodb进行便捷操作的对象模型工具</p>
 </blockquote>
@@ -463,9 +463,38 @@
 <p><strong><code>mongoose.connection.on(&#39;open&#39;,()=&gt;console.log(&#39;success&#39;))</code></strong></p>
 <p>连接失败：</p>
 <p><strong><code>mongoose.connection.on(&#39;error&#39;,()=&gt;console.log(&#39;error&#39;))</code></strong></p>
-<h2 id="创建schema"><a href="#创建schema" class="headerlink" title="创建schema"></a>创建schema</h2><blockquote>
-<p>创建一个表结构，可以理解为<code>create table</code></p>
+<h2 id="创建schema"><a href="#创建schema" class="headerlink" title="创建schema"></a>创建schema</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> animal = mongose.Schema(&#123;</div><div class="line">	title: <span class="built_in">String</span>,</div><div class="line">	time: &#123;<span class="attr">type</span>:<span class="built_in">Date</span>,<span class="attr">default</span>: <span class="built_in">Date</span>.now&#125;, <span class="comment">// 默认值</span></div><div class="line">	comments:[&#123;<span class="attr">body</span>: <span class="built_in">String</span>,<span class="attr">date</span>:<span class="built_in">Date</span>&#125;], <span class="comment">// 对象数组</span></div><div class="line">	meta:&#123;</div><div class="line">		votes: &#123;<span class="attr">type</span>: <span class="built_in">Number</span>,<span class="attr">unique</span>: <span class="literal">true</span>,<span class="attr">required</span>: <span class="literal">true</span>&#125;,<span class="comment">// 主码(各不同) 和 必填字段</span></div><div class="line">		favs: &#123;<span class="attr">type</span>:<span class="built_in">Number</span>,<span class="attr">min</span>: <span class="number">0</span>, <span class="attr">max</span>: <span class="number">20</span>&#125; <span class="comment">// 设定范围</span></div><div class="line">	&#125; <span class="comment">// 对象</span></div><div class="line">&#125;,&#123;</div><div class="line">	autoIndex: <span class="literal">false</span>, <span class="comment">// 自动索引</span></div><div class="line">	safe:<span class="literal">false</span>, <span class="comment">// 确保Entity的值存入数据库前会被自动验证</span></div><div class="line">	capped:<span class="number">1024</span>, <span class="comment">// 如果有数据库的批量操作，该属性能限制一次操作的量</span></div><div class="line">	versionKey:<span class="string">'__sth'</span>, <span class="comment">// 版本锁</span></div><div class="line">	strict:<span class="literal">false</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>数据类型有</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Date</li>
+<li>Buffer</li>
+<li>Boolean</li>
+<li>Mixed</li>
+<li>Objectid</li>
+<li>Array</li>
+</ul>
+<blockquote>
+<p>注意首字母大写</p>
 </blockquote>
+<h2 id="实例化model"><a href="#实例化model" class="headerlink" title="实例化model"></a>实例化model</h2><p><strong>Schema，Model，Entity的区别</strong></p>
+<p><strong>Schema</strong>： 一种以文件形式存储的数据库模型骨架，不具备数据库的操作能力，<code>schema</code>仅仅是一段代码，一个参照原型。</p>
+<p><strong>Model</strong>：由<code>Schema</code>发布生成的模型，具有抽象属性和行为的数据库操作对。</p>
+<p><strong>Entity</strong>：由<code>Model</code>创建的实体，他的操作也会影响数据库。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> User = <span class="keyword">new</span> mongoose.Schema(&#123;<span class="attr">name</span>: <span class="built_in">String</span>,<span class="attr">size</span>: <span class="built_in">Number</span>&#125;)</div><div class="line"></div><div class="line"><span class="keyword">let</span> user = mongoose.model(<span class="string">'user'</span>,User) <span class="comment">// 根据User创建user `model`</span></div></pre></td></tr></table></figure>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><blockquote>
+<p>以下user均是一个<code>Model</code></p>
+</blockquote>
+<p><strong>简单单例查询</strong></p>
+<p><strong><code>Model.findOne(conditions, [fields], [options], [callback])</code></strong></p>
+<p>如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = mongoose.model(<span class="string">'Person'</span>, yourSchema);</div><div class="line"></div><div class="line"><span class="comment">// find each person with a last name matching 'Ghost', selecting the `name` and `occupation` fields</span></div><div class="line"></div><div class="line">Person.findOne(&#123; <span class="string">'name.last'</span>: <span class="string">'Ghost'</span> &#125;, <span class="string">'name occupation'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, person</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">return</span> handleError(err);</div><div class="line">  <span class="built_in">console</span>.log(person.name,person.occupation)</div></pre></td></tr></table></figure>
+<p><strong>链式调用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">user.findOne(&#123;<span class="string">'name'</span>:<span class="string">'test'</span>&#125;).select(<span class="string">'name'</span>).exec(<span class="function">(<span class="params">err,user</span>)=&gt;</span>&#123;</div><div class="line">	<span class="keyword">if</span>(err) <span class="built_in">console</span>.log(err)</div><div class="line">	<span class="built_in">console</span>.log(user)</div><div class="line">	<span class="comment">// &#123; _id: 59f83be3382ebf406b15984c, name: 'test' &#125;</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line">一个完整的例子：</div><div class="line"></div><div class="line">Person</div><div class="line">.find(&#123; <span class="attr">occupation</span>: <span class="regexp">/host/</span> &#125;)</div><div class="line">.where(<span class="string">'name.last'</span>).equals(<span class="string">'Ghost'</span>)</div><div class="line">.where(<span class="string">'age'</span>).gt(<span class="number">17</span>).lt(<span class="number">66</span>)</div><div class="line">.where(<span class="string">'likes'</span>).in([<span class="string">'vaporizing'</span>, <span class="string">'talking'</span>])</div><div class="line">.limit(<span class="number">10</span>)</div><div class="line">.sort(<span class="string">'-occupation'</span>)</div><div class="line">.select(<span class="string">'name ocupation'</span>)</div><div class="line">.exec(callback)</div><div class="line"></div><div class="line"><span class="comment">// like mysql</span></div></pre></td></tr></table></figure>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><p><strong><code>Model.remove(conditions, [callback])</code></strong></p>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p><strong><code>Model.update(conditions, update, [options], [callback])</code></strong></p>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><p><strong><code>Model.save()</code></strong></p>
 
     
 
