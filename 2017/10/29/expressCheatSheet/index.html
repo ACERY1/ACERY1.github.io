@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="10月 29, 2017" />
-        <meta property="article:modified_time" content="10月 31, 2017" />
+        <meta property="article:modified_time" content="11月 01, 2017" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "express cheat sheet",
     "url": "http://www.helloyzy.cn/2017/10/29/expressCheatSheet/index.html",
     "datePublished": "10月 29, 2017",
-    "dateModified": "10月 31, 2017",
+    "dateModified": "11月 01, 2017",
     "description": "方便记忆",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -459,6 +459,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">"body-parser"</span>)</div><div class="line"></div><div class="line"><span class="comment">///全局使用///</span></div><div class="line">app.use(bodyParser.json()) <span class="comment">// parse application/json</span></div><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;)) <span class="comment">// parse application/x-www-form-urlencoded</span></div><div class="line"></div><div class="line"><span class="comment">///局部使用///</span></div><div class="line">app.get(<span class="string">'/test'</span>,bodyParser.json(),()=&gt;&#123;&#125;)</div></pre></td></tr></table></figure>
 <h2 id="module-express-session"><a href="#module-express-session" class="headerlink" title="module: express-session"></a>module: express-session</h2><p><strong>用于服务端使用session</strong></p>
 <h2 id="module-express-validator"><a href="#module-express-validator" class="headerlink" title="module: express-validator"></a>module: express-validator</h2><p><strong>用于做http请求验证(诸如请求字段格式等）</strong></p>
+<p><strong><code>req.assert([params],&#39;提示文字&#39;).[validateFunction]</code></strong></p>
+<ul>
+<li><strong>.isEmpty()</strong> 判空</li>
+<li><strong>.isLength({min:2,max:12})</strong> 固定长度</li>
+<li><strong>.isEmail()</strong> 是不是邮件结构</li>
+<li><strong>.equals([params])</strong> 是否与..相同</li>
+</ul>
 <h2 id="module-express-flash"><a href="#module-express-flash" class="headerlink" title="module: express-flash"></a>module: express-flash</h2><p><strong>用于重定向跳转时传递消息</strong>(非常适合mvc)</p>
 
     
