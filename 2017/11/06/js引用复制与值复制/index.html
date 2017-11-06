@@ -12,7 +12,7 @@
     
     <title>
         
-            express cheat sheet | 
+            由Vue里数据绑定的错误操做引出Vue双向绑定部分原理 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="方便记忆">
-    <meta name="keywords" content="kepp it super simple,cheat sheet">
+    <meta name="description" itemprop="description" content="Talk Is Cheap">
+    <meta name="keywords" content="kepp it super simple,双向绑定">
 
     <!-- Site Verification -->
     
@@ -67,26 +67,26 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="express cheat sheet | ACERY">
+    <meta property="og:title" content="由Vue里数据绑定的错误操做引出Vue双向绑定部分原理 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="方便记忆">
-    <meta property="og:article:tag" content="cheat sheet"> 
+    <meta property="og:description" content="Talk Is Cheap">
+    <meta property="og:article:tag" content="双向绑定"> 
 
     
-        <meta property="article:published_time" content="10月 29, 2017" />
-        <meta property="article:modified_time" content="11月 01, 2017" />
+        <meta property="article:published_time" content="11月 06, 2017" />
+        <meta property="article:modified_time" content="11月 06, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="express cheat sheet | ACERY">
-    <meta name="twitter:description" content="方便记忆">
+    <meta name="twitter:title" content="由Vue里数据绑定的错误操做引出Vue双向绑定部分原理 | ACERY">
+    <meta name="twitter:description" content="Talk Is Cheap">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/2017/10/29/expressCheatSheet/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/11/06/js引用复制与值复制/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -112,11 +112,11 @@
         },
         "description": "kepp it super simple"
     },
-    "headline": "express cheat sheet",
-    "url": "http://www.helloyzy.cn/2017/10/29/expressCheatSheet/index.html",
-    "datePublished": "10月 29, 2017",
-    "dateModified": "11月 01, 2017",
-    "description": "方便记忆",
+    "headline": "由Vue里数据绑定的错误操做引出Vue双向绑定部分原理",
+    "url": "http://www.helloyzy.cn/2017/11/06/js引用复制与值复制/index.html",
+    "datePublished": "11月 06, 2017",
+    "dateModified": "11月 06, 2017",
+    "description": "Talk Is Cheap",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://www.helloyzy.cn"
@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#module-body-parser"><span class="post-toc-number">1.</span> <span class="post-toc-text">module: body-parser</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#module-express-session"><span class="post-toc-number">2.</span> <span class="post-toc-text">module: express-session</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#module-express-validator"><span class="post-toc-number">3.</span> <span class="post-toc-text">module: express-validator</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#module-express-flash"><span class="post-toc-number">4.</span> <span class="post-toc-text">module: express-flash</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阅读本文，你将了解："><span class="post-toc-number">1.</span> <span class="post-toc-text">阅读本文，你将了解：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后提提-值复制与引用复制"><span class="post-toc-number">2.</span> <span class="post-toc-text">最后提提 值复制与引用复制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">简单总结</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -362,7 +362,7 @@
         
     
             <p class="article-headline-p">
-                express cheat sheet
+                由Vue里数据绑定的错误操做引出Vue双向绑定部分原理
             </p>
         </div>
 
@@ -381,7 +381,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>ACERY</strong>
-        <span>10月 29, 2017</span>
+        <span>11月 06, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -405,7 +405,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/cheat-sheet/">cheat sheet</a>
+        <a class="post_tag-link" href="/tags/双向绑定/">双向绑定</a>
     </ul>
     
 
@@ -448,25 +448,79 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>为了方便查询和记忆express常用模块和方法的cheatsheet。</p>
-<blockquote>
-<p>以后代码中所有的app都是<code>express()</code>构造出来的。</p>
-</blockquote>
-<h2 id="module-body-parser"><a href="#module-body-parser" class="headerlink" title="module: body-parser"></a>module: body-parser</h2><p><strong>用于解析<code>http</code>请求里的<code>body</code>部分.</strong></p>
-<blockquote>
-<p><code>express 4+</code>已经将各种中间件从框架本身抽离了出来，<strong>所以请记得独立加载</strong></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">"body-parser"</span>)</div><div class="line"></div><div class="line"><span class="comment">///全局使用///</span></div><div class="line">app.use(bodyParser.json()) <span class="comment">// parse application/json</span></div><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;)) <span class="comment">// parse application/x-www-form-urlencoded</span></div><div class="line"></div><div class="line"><span class="comment">///局部使用///</span></div><div class="line">app.get(<span class="string">'/test'</span>,bodyParser.json(),()=&gt;&#123;&#125;)</div></pre></td></tr></table></figure>
-<h2 id="module-express-session"><a href="#module-express-session" class="headerlink" title="module: express-session"></a>module: express-session</h2><p><strong>用于服务端使用session</strong></p>
-<h2 id="module-express-validator"><a href="#module-express-validator" class="headerlink" title="module: express-validator"></a>module: express-validator</h2><p><strong>用于做http请求验证(诸如请求字段格式等）</strong></p>
-<p><strong><code>req.assert([params],&#39;提示文字&#39;).[validateFunction]</code></strong></p>
-<ul>
-<li><strong>.isEmpty()</strong> 判空</li>
-<li><strong>.isLength({min:2,max:12})</strong> 固定长度</li>
-<li><strong>.isEmail()</strong> 是不是邮件结构</li>
-<li><strong>.equals([params])</strong> 是否与..相同</li>
+        <h2 id="阅读本文，你将了解："><a href="#阅读本文，你将了解：" class="headerlink" title="阅读本文，你将了解："></a>阅读本文，你将了解：</h2><ul>
+<li>Vue绑定数据是数组时需要注意的事项</li>
+<li>Object.defineProperty实现MVVM的基本原理。</li>
+<li>值复制与引用复制</li>
 </ul>
-<h2 id="module-express-flash"><a href="#module-express-flash" class="headerlink" title="module: express-flash"></a>module: express-flash</h2><p><strong>用于重定向跳转时传递消息</strong>(非常适合mvc)</p>
+<p>最开始使用<code>Vue</code>做开发的时候，遇到过这样一个问题：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">templates</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span>		</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">templates</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">		el: <span class="string">'#app'</span>,</span></div><div class="line"><span class="javascript">		data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="undefined">			list:[1,2,3]</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	&#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这是一个简单的List双向绑定，会达到如下的效果</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/reference/1.png" alt=""></p>
+<p>假设现在通过<code>Ajax</code>    获取到更新的数据，并将<code>list[1]</code>变更为新数据，以前我会这样去写。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.list[<span class="number">1</span>] = response.data</div><div class="line"><span class="comment">// reponse.data来自于XHR请求过来的数据</span></div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">假设`</span>reponse.data = <span class="number">4</span><span class="string">`,那么我们想达到的效果就是将`</span>list[<span class="number">1</span>]=<span class="number">2</span> 变为 list[<span class="number">1</span>]=<span class="number">4</span><span class="string">`。</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">**但是，你会发现，视图里的数据并没有发生变化，仍然是**</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">![](https://gitee.com/vueman/md_pic/raw/master/reference/1.png)</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">**而数据域里的数据已经变化了**</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">![](https://gitee.com/vueman/md_pic/raw/master/reference/3.png)</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">最后经过我的各种尝试，最终找到了正确的解决方法。</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">`</span><span class="keyword">this</span>.list.splice(<span class="number">1</span>,<span class="number">1</span>,reponse.data)<span class="string">`</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">**视图成功更新：**</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">![](https://gitee.com/vueman/md_pic/raw/master/reference/4.png)</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">**官方也提供了正确的方法：**</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">![](https://gitee.com/vueman/md_pic/raw/master/reference/5.png)</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">成功了，但是，为什么</span></div><div class="line"><span class="string">---</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">这里必须得先简单讲一下`</span>Vue<span class="string">`实现`</span>数据与视图双向绑定<span class="string">`的原理。</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">&gt; Vue双向绑定的原理是**数据劫持**。</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">**而数据劫持所用到的核心是`</span><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)<span class="string">`**</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">&gt; Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">一个简单的例子了解这个方法：</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">`</span><span class="string">``</span>js</div><div class="line"><span class="keyword">var</span> o = &#123;&#125;; <span class="comment">// 创建一个新对象</span></div><div class="line"></div><div class="line"><span class="comment">// 在对象中添加一个属性与存取描述符的示例</span></div><div class="line"><span class="keyword">var</span> bValue=<span class="number">2</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(o, <span class="string">"b"</span>, &#123;</div><div class="line">  get : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"拦截get"</span>)</div><div class="line">    <span class="keyword">return</span> bValue;</div><div class="line">  &#125;,</div><div class="line">  set : <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"拦截set"</span>)</div><div class="line">    bValue = newValue;</div><div class="line">  &#125;,</div><div class="line">  enumerable : <span class="literal">true</span>, <span class="comment">// 可枚举</span></div><div class="line">  configurable : <span class="literal">false</span> <span class="comment">// 不能再define</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(o.b);</div><div class="line"></div><div class="line">o.b=<span class="number">3</span>;</div></pre></td></tr></table></figure>
+<p><strong>代码执行结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">拦截get</div><div class="line">2</div><div class="line">拦截set</div></pre></td></tr></table></figure>
+<p>从效果上看：</p>
+<ul>
+<li>当读取<code>o.b</code>里的值的时候(准确点说是引擎对<code>o.b</code>进行了<code>RHS</code>查询),会触发<code>get</code>函数</li>
+<li>当修改<code>o.b</code>时(LHS)，会触发<code>set</code>函数。</li>
+</ul>
+<p><strong>简单来说，就是在变量<code>读值</code>和<code>改值</code>的时候触发一个<code>hook</code>，并且<code>hook</code>发生在<code>读改</code>之前。</strong><br>通过<code>Object.defineProperty</code>，则可以实现对<code>变量</code>的<code>值监听</code>，有了监听，就有<code>callback</code>，为回调更新视图数据提供了可能性。</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/reference/6.png" alt=""></p>
+<p>当我们在<code>vue</code>组件里的<code>data</code>属性里定义的各种数据，都会被<code>Observer</code>循环遍历一次，并用<code>Object.defineProperty</code>对<code>原data</code>进行包装，最后改变其<code>set</code>和<code>get</code>，使得每次对data的部分修改都能被提前捕捉到，并通知给<code>watcher</code>，完成后面的视图更新等操作。(本文主要针对数据劫持进行浅析，将<code>watcher</code>和<code>compiler</code>看做一个实现视图更新的黑盒子)</p>
+<p><strong>那么回到问题：</strong> 为什么不同样的数组操作造成了一个可以更新视图，一个不可更新视图。</p>
+<p>看下面一段测试代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;&#125;; <span class="comment">// 创建一个新对象</span></div><div class="line"></div><div class="line"><span class="comment">// 在对象中添加一个属性与存取描述符的示例</span></div><div class="line"><span class="keyword">var</span> bValue=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(o, <span class="string">"b"</span>, &#123;</div><div class="line">  get : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"拦截get"</span>)</div><div class="line">    <span class="keyword">return</span> bValue;</div><div class="line">  &#125;,</div><div class="line">  set : <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"拦截set"</span>)</div><div class="line">    bValue = newValue;</div><div class="line">  &#125;,</div><div class="line">  enumerable : <span class="literal">true</span>,</div><div class="line">  configurable : <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">o.b[<span class="number">1</span>]=<span class="number">4</span></div><div class="line"><span class="built_in">console</span>.log(o.b)</div></pre></td></tr></table></figure>
+<p><strong>输出结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">拦截get</div><div class="line">拦截get</div><div class="line">[ 1, 4, 3 ]</div></pre></td></tr></table></figure>
+<p><strong>惊讶，为什么输出了两遍<code>&#39;拦截get&#39;</code>，当我将<code>console.log(o.b)</code>这行代码注释掉之后，输出的结果为一行<code>拦截get</code>，这里面直接说明两个问题：</strong></p>
+<ol>
+<li>o.b[1] = 4 不会触发<code>set</code></li>
+<li>o.b[1] = 4 会触发一次<code>get</code></li>
+</ol>
+<p>补充: 后来证明<code>o.b.splice(1,1,4)也是触发一次get，不触发set</code></p>
+<p><strong>针对问题1，我的理解是</strong></p>
+<p>在<code>JavaScript</code>的基本内置类型里面，是不存在的<code>array</code>这个基本类型的，<code>array</code>可以看做<code>Object</code>的子类型（毕竟<code>typeof myArray = &#39;object&#39;</code>），而代码里<code>Object.defineProperty(o, &quot;b&quot;，...</code>，只对对象<code>o</code>的属性<code>b</code>设置了<code>get</code>和<code>set</code>，而对<code>b(数组也是一个对象)</code>内部没有设置<code>get</code>和<code>set</code>，所以<code>o.b[1]=4</code>不会触发<code>b</code>的<code>set</code>，当然<code>o.b =&#39;1&#39;</code>是会触发的，还有一种办法，就是将o.b也设置<code>get</code>和<code>set</code>，即针对<code>o</code>递归设置。</p>
+<p><strong>针对问题2，我的理解是</strong></p>
+<p><code>o.b[1]=4</code>分为以下两步：</p>
+<ul>
+<li>获取<code>o.b</code>的内容(根据key寻找value的过程)，可以认为<code>get</code>和<code>set</code>对点操作符进行了劫持。</li>
+<li>将<code>b</code>这个数组索引为1的值改为4。</li>
+</ul>
+<p>第一步，便触发了<code>get</code>。</p>
+<p>所以，总结一下最初问题的答案：</p>
+<p><code>this.list[1] = response.data</code> 和 <code>this.list.splice(1,1,response.data)</code>均不会触发<code>Observer</code>里的<code>set</code>，但是在<code>vue组件</code>内部却可以，说明<code>Vue</code>对原生的数组操作方法如（slice，push，pop，shift 等)进行了包装和重载。</p>
+<h2 id="最后提提-值复制与引用复制"><a href="#最后提提-值复制与引用复制" class="headerlink" title="最后提提 值复制与引用复制"></a>最后提提 值复制与引用复制</h2><p>先引入一段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	x.push(<span class="number">4</span>);</div><div class="line">	x=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line">	x.push(<span class="number">7</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line">foo( a );</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a);</div></pre></td></tr></table></figure>
+<p>这段代码会输出什么？</p>
+<p>答案是<code>[1,2,3,4]</code>而不是<code>[4,5,6,7]</code>。</p>
+<p>原因是因为<code>引用指向的是值本身而非变量</code>，在<code>x=[4,5,6]</code>这一步，<code>x</code>从引用<code>a</code>的值变成了<code>引用[4,5,6]</code>，对于<code>a</code>本身，仍然是引用<code>[1,2,3,4]</code>,假如<code>x</code>是引用的变量，那么<code>改变x就会改变a</code></p>
+<p>不改变引用的做法是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">	x.push(<span class="number">4</span>);</div><div class="line">	x.length=<span class="number">0</span>;</div><div class="line">	x.push(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>为什么提引用，是因为这个解决办法和Vue里面的解决方法相似，最开始猜测是改变引用导致data没有被Observer造成的，后来发现猜测是错误的。</p>
+</blockquote>
+<p>对于 值复制和引用复制，可以总结成以下两句话。</p>
+<ul>
+<li>简单值(如null undefined 字符串 数字 布尔 symbols）是通过值复制来赋值/传递。</li>
+<li>复合值(如对象和函数)是通过引用来赋值/传递。</li>
+</ul>
+<p>举个形象的例子。</p>
+<p>假如有一个很大很大的对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = &#123;</div><div class="line">	name:<span class="string">'test'</span></div><div class="line">	........ <span class="number">2</span>MB大小</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> b = a;</div><div class="line">b.name = <span class="string">'bob'</span></div><div class="line"><span class="built_in">console</span>.log(b.name);</div><div class="line"><span class="built_in">console</span>.log(a.name);</div></pre></td></tr></table></figure>
+<p>结果是 <code>bob bob</code></p>
+<p>如果这个时候仍然对<code>a</code>进行拷贝，显然会非常浪费空间，而且不是我们期望的，这时候<code>b</code>只是引用<code>a的值</code>。(注意是a的值而非变量a本身)</p>
+<p>当然在简单值里面就是通过值复制传递了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a =<span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> b = a;</div><div class="line">b =<span class="number">3</span>;</div><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"><span class="built_in">console</span>.log(a);</div></pre></td></tr></table></figure>
+<p>输出<br>    3<br>    2</p>
+<p><strong>那么如果要对一个很大的对象进行完全拷贝怎么办？</strong></p>
+<p><code>遍历属性，一一对简单值进行值传递赋值</code><strong>，这也是我们说的深拷贝。浅拷贝就是值传递赋值</strong></p>
+<h2 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h2><ul>
+<li>mvvm的核心就是<code>Object.defineProject()</code>,但是要注意不触发<code>set</code>的情况。</li>
+<li>值复制和引用复制(也叫值拷贝和引用拷贝)的设计很合理。</li>
+<li>引用指向的是值本身而非变量，这一点和c/c++是有一定的区别的。</li>
+</ul>
 
     
 
@@ -482,7 +536,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2017/10/29/expressCheatSheet/"  ></div>
+<div id="SOHUCS" sid="2017/11/06/js引用复制与值复制/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = 'cytdDcOFu';
@@ -506,21 +560,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/31/mongoseCheatSheet/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/29/nodeCheatSheet/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/05/js类型/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
