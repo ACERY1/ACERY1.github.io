@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="11月 05, 2017" />
-        <meta property="article:modified_time" content="11月 05, 2017" />
+        <meta property="article:modified_time" content="11月 06, 2017" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "浅析JavaScript语言的类型",
     "url": "http://www.helloyzy.cn/2017/11/05/js类型/index.html",
     "datePublished": "11月 05, 2017",
-    "dateModified": "11月 05, 2017",
+    "dateModified": "11月 06, 2017",
     "description": "Talk Is Cheap",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -504,7 +504,7 @@
 <p>综上，变量本身没有类型的，类型都来自与值（方便理解的话，就理解为变量继承了值的类型，而值的类型是一个标签，用于和其他的值去区分)</p>
 <h2 id="undefined-与-not-defined"><a href="#undefined-与-not-defined" class="headerlink" title="undefined 与 not defined"></a>undefined 与 not defined</h2><p>经常容易出现的概念性错误。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;</div><div class="line"></div><div class="line">a; <span class="comment">// undefined</span></div><div class="line">b; <span class="comment">// ReferenctError: b is not defined.</span></div></pre></td></tr></table></figure>
-<p>在<code>c</code>语言里面，会去严格区分<code>声明(declared)</code>和<code>定义(defined)</code>,而在<code>JS</code>里，<code>is not defined</code>却会让人误以为是声明了没有定义的变量，但是实际上，却是没有声明，这个地方用<code>ReferenctError: b is not declared</code></p>
+<p>在<code>c</code>语言里面，会去严格区分<code>声明(declared)</code>和<code>定义(defined)</code>,而在<code>JS</code>里，<code>is not defined</code>却会让人误以为是声明了没有定义的变量，但是实际上，却是没有声明，这个地方用<code>ReferenceError: b is not declared</code></p>
 <p>几张图帮助理解：</p>
 <p><img src="https://gitee.com/vueman/md_pic/raw/master/point/1.png" alt=""></p>
 <p><strong>某开发者想要声明两个变量，一个值类型为number的A,一个值类型为string的B，他在程序里写了</strong></p>
