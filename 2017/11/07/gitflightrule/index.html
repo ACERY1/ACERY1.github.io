@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: Docker | 
+            Git 飞行手册 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="description" itemprop="description" content="不再害怕push和merge">
+    <meta name="keywords" content="kepp it super simple,GitUse">
 
     <!-- Site Verification -->
     
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: Docker | ACERY">
+    <meta property="og:title" content="Git 飞行手册 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:description" content="不再害怕push和merge">
+    <meta property="og:article:tag" content="GitUse"> 
 
+    
+        <meta property="article:published_time" content="11月 07, 2017" />
+        <meta property="article:modified_time" content="11月 07, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: Docker | ACERY">
-    <meta name="twitter:description" content="Talk Is Cheap">
+    <meta name="twitter:title" content="Git 飞行手册 | ACERY">
+    <meta name="twitter:description" content="不再害怕push和merge">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/categories/Docker/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/11/07/gitflightrule/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "Git 飞行手册",
+    "url": "http://www.helloyzy.cn/2017/11/07/gitflightrule/index.html",
+    "datePublished": "11月 07, 2017",
+    "dateModified": "11月 07, 2017",
+    "description": "不再害怕push和merge",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -264,233 +297,254 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-“飞行手册”"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git “飞行手册”</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是”飞行手册”"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">什么是”飞行手册”?</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文档约定"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">文档约定</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编辑提交的时候-Commit"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">编辑提交的时候(Commit)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我刚才提交了什么？"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">我刚才提交了什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我在commit-message-里面写了错误的文字信息"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">我在commit message 里面写了错误的文字信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我用错误的用户名和邮箱commit"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">我用错误的用户名和邮箱commit</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我想要从commit了的文件中将一个文件重置成上一个版本号的内容"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">我想要从commit了的文件中将一个文件重置成上一个版本号的内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我想撤销或删除我最近一次提交"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">我想撤销或删除我最近一次提交</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除任意的一次提交"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">删除任意的一次提交</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/22/docker学习cap2/">Docker学习 Chapter-2  docker设计浅析</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            在上一章里面，一直提到了几个名字 Images，Container，Docker
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/22/docker学习cap2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>10月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/10/22/docker学习cap2/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/22/docker学习cap3/">Docker学习 Chapter-3  使用Docker部署node应用</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/22/docker学习cap3/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>10月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/10/22/docker学习cap3/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/20/docker学习cap1/">Docker学习 Chapter-1  初学踩坑</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近在学习大数据的时候，在配置环境上一直做着重复的工作，感觉十分不爽，故寻求更好的解决方案，docker便进入视线。
-#Docker ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/20/docker学习cap1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>10月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/10/20/docker学习cap1/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Git 飞行手册
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>11月 07, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/GitUse/">GitUse</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>本文翻译自<a href="https://github.com/k88hudson/git-flight-rules" target="_blank" rel="external">https://github.com/k88hudson/git-flight-rules</a>，该文章收录了若干git常见错误操作，以及解决方法。</p>
+<h1 id="Git-“飞行手册”"><a href="#Git-“飞行手册”" class="headerlink" title="Git “飞行手册”"></a>Git “飞行手册”</h1><hr>
+<h4 id="什么是”飞行手册”"><a href="#什么是”飞行手册”" class="headerlink" title="什么是”飞行手册”?"></a><strong>什么是”飞行手册”?</strong></h4><p><strong>一个关于出现问题如何去解决的的<code>git程序员指南</code>（以前是宇航员指南)</strong></p>
+<blockquote>
+<p>“飞行手册”是一个构建起来十分困难的知识体系，它会十分详细地记录发送某事件的原因，以及为什么。它基本是非常详细，非常适应特定场景的标准操作步骤。 </p>
+<p>自20世纪60年代初以来，美国宇航局一直在几率我们的失误，灾难和解决方案，当时水星时代的地面小组首先开始将“经验教训”收集到一个纲要中，该纲要现列出成千上万有问题的情况，从发动机故障到打嗝的手柄到计算机故障，及其解决方案。</p>
+</blockquote>
+<p>— 克里斯·哈德菲尔德，宇航员的生命指南。</p>
+<h4 id="文档约定"><a href="#文档约定" class="headerlink" title="文档约定"></a>文档约定</h4><p>为了清楚起见,本文档使用的都是自定义的bash提示符来指明<code>当前分支</code>和<code>是否有暂存区的变动</code>，具体分支包含在括号中，分支名旁边的<code>*</code>指出<code>变动已提交到暂存区</code>。</p>
+<blockquote>
+<p>译者注：关键性名词 推送–push ，提交–commit，暂存区–stage , 拉取–pull</p>
+</blockquote>
+<h2 id="编辑提交的时候-Commit"><a href="#编辑提交的时候-Commit" class="headerlink" title="编辑提交的时候(Commit)"></a>编辑提交的时候(Commit)</h2><h3 id="我刚才提交了什么？"><a href="#我刚才提交了什么？" class="headerlink" title="我刚才提交了什么？"></a>我刚才提交了什么？</h3><p>比如说，你只是盲目地提交了变动(commit the changes)，通常有些时候为了省事会<code>git add .</code> 和<code>git commit -m &#39;*&#39;</code>提交当前的所有改变，<strong>但你不确定刚刚提交的具体内容是什么</strong>，你可以在当前HEAD上显示最新提交的：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(master)$ git show</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span> -n1 -p</div></pre></td></tr></table></figure>
+<h3 id="我在commit-message-里面写了错误的文字信息"><a href="#我在commit-message-里面写了错误的文字信息" class="headerlink" title="我在commit message 里面写了错误的文字信息"></a>我在commit message 里面写了错误的文字信息</h3><p>如果你写错了，提交还没有被推送，你可以执行以下操作来改变提交信息：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit --amend</div></pre></td></tr></table></figure>
+<p>这将打开一个默认文本编辑器，用于编辑信息。或者，你可以用一个命令来完成这一切。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit --amend -m <span class="string">'xxxxxxx'</span></div></pre></td></tr></table></figure>
+<p>如果你已经将本次更新推送到了远程，虽然可以修改提交并强制推送，但不建议这样做。</p>
+<h3 id="我用错误的用户名和邮箱commit"><a href="#我用错误的用户名和邮箱commit" class="headerlink" title="我用错误的用户名和邮箱commit"></a>我用错误的用户名和邮箱commit</h3><p>如果它是一个单一的提交，修改它</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit --amend --author “ New Authorname &lt;authoremail@mydomain.com&gt; ”</div></pre></td></tr></table></figure>
+<p>如果您需要更改所有历史记录，请参阅“git filter-branch”的手册页。</p>
+<h3 id="我想要从commit了的文件中将一个文件重置成上一个版本号的内容"><a href="#我想要从commit了的文件中将一个文件重置成上一个版本号的内容" class="headerlink" title="我想要从commit了的文件中将一个文件重置成上一个版本号的内容"></a>我想要从commit了的文件中将一个文件重置成上一个版本号的内容</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git checkout HEAD^ myfile</div><div class="line">$ git add -A</div><div class="line">$ git commit --amend</div></pre></td></tr></table></figure>
+<blockquote>
+<p>译者注：这三行命令会将myfile文件重置到上一个版本号然后再次一并提交。</p>
+</blockquote>
+<h3 id="我想撤销或删除我最近一次提交"><a href="#我想撤销或删除我最近一次提交" class="headerlink" title="我想撤销或删除我最近一次提交"></a>我想撤销或删除我最近一次提交</h3><p>如果你需要删除已经推送过的提交，可以使用如下的方式。但是，这将不可逆转地改变你的提交历史，并且将别人的提交记录都弄糟(因为强制性覆盖)。总之，如果你不确定你的目的，千万别这样做。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reset HEAD^ --hard</div><div class="line">$ git push -f [remote] [branch]</div></pre></td></tr></table></figure>
+<p>如果你还没有推送，把Git重置到上一次提交前的状态。(并且保持你暂存区里的状态)</p>
+<p><code>sh
+(my-branch*)$ git reset --soft HEAD@{1}</code></p>
+<p>本方法只适用于仍未push的情况，如果你已经push了，唯一安全的做法就是<code>git revert SHAofBadCommit</code>。这将会创建一次新的提交，用于撤销之前所有的更改。如果该分支基本安全(没有其他开发人员负责),直接<code>git push -f</code>也可以。</p>
+<blockquote>
+<p>译者注：<code>reset</code>和<code>revert</code>的区别在于：git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit</p>
+</blockquote>
+<h3 id="删除任意的一次提交"><a href="#删除任意的一次提交" class="headerlink" title="删除任意的一次提交"></a>删除任意的一次提交</h3><p>同样警告，如果不是必要，千万别这么做</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git rebase --onto SHA1_OF_BAD_COMMIT^ SHA1_OF_BAD_COMMIT</div><div class="line">$ git push -f [remote] [branch]</div></pre></td></tr></table></figure>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/11/07/gitflightrule/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/06/js引用复制与值复制/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
