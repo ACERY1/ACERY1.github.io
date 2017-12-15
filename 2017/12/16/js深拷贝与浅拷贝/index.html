@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: Docker | 
+            JS实现深拷贝 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="description" itemprop="description" content="深拷贝与浅拷贝">
+    <meta name="keywords" content="kepp it super simple,深拷贝">
 
     <!-- Site Verification -->
     
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: Docker | ACERY">
+    <meta property="og:title" content="JS实现深拷贝 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:description" content="深拷贝与浅拷贝">
+    <meta property="og:article:tag" content="深拷贝"> 
 
+    
+        <meta property="article:published_time" content="12月 16, 2017" />
+        <meta property="article:modified_time" content="12月 16, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: Docker | ACERY">
-    <meta name="twitter:description" content="Talk Is Cheap">
+    <meta name="twitter:title" content="JS实现深拷贝 | ACERY">
+    <meta name="twitter:description" content="深拷贝与浅拷贝">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/categories/Docker/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2017/12/16/js深拷贝与浅拷贝/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "JS实现深拷贝",
+    "url": "http://www.helloyzy.cn/2017/12/16/js深拷贝与浅拷贝/index.html",
+    "datePublished": "12月 16, 2017",
+    "dateModified": "12月 16, 2017",
+    "description": "深拷贝与浅拷贝",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -264,233 +297,274 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是深拷贝"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现浅拷贝"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现浅拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现深拷贝"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何实现深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#综上："><span class="post-toc-number">4.</span> <span class="post-toc-text">综上：</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/22/docker学习cap2/">Docker学习 Chapter-2  docker设计浅析</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            在上一章里面，一直提到了几个名字 Images，Container，Docker
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/22/docker学习cap2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>10月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/10/22/docker学习cap2/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/22/docker学习cap3/">Docker学习 Chapter-3  使用Docker部署node应用</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/22/docker学习cap3/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>10月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/10/22/docker学习cap3/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/20/docker学习cap1/">Docker学习 Chapter-1  初学踩坑</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近在学习大数据的时候，在配置环境上一直做着重复的工作，感觉十分不爽，故寻求更好的解决方案，docker便进入视线。
-#Docker ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/20/docker学习cap1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>10月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Docker/">Docker</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2017/10/20/docker学习cap1/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                JS实现深拷贝
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>12月 16, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/深拷贝/">深拷贝</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>首先，我们必须明确一点，就是JavaScript的变量可以分为以下两种类型：</p>
+<ul>
+<li>基本类型<ul>
+<li>undefined</li>
+<li>null</li>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>symbol</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>基本变量是直接按值存放的，存放在栈内存中的简单数据段，可以直接访问。</p>
+</blockquote>
+<ul>
+<li>引用类型 Object</li>
+</ul>
+<blockquote>
+<p>存放在堆内存中的对象，变量保存的是一个指针，这个指针指向另一个位置。当需要访问引用类型（如对象，数组等）的值时，首先从栈内存中获得该对象的地址指针，然后再从堆内存中取得所需的数据。</p>
+</blockquote>
+<p><strong>一个简单的例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">b</span>:<span class="number">2</span>&#125;;</div><div class="line"><span class="keyword">var</span> obj2 = obj1;</div><div class="line"></div><div class="line">obj2.b = <span class="number">3</span>; </div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj1.b); <span class="comment">// 3</span></div><div class="line"><span class="built_in">console</span>.log(obj2.b); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<p>那么问题就来了，有一些场景我们需要将一个对象含的值全部<code>Copy</code>给另一个对象，这个时候如果只是简单的赋值操作，只是对指针进行了一个复制，而在堆内存区的值并没有发生改变。所以我们得到以下的结论：</p>
+<h3 id="什么是深拷贝"><a href="#什么是深拷贝" class="headerlink" title="什么是深拷贝"></a>什么是深拷贝</h3><blockquote>
+<p>深拷贝即是在堆内存区拷贝出一个对象来。</p>
+<p>深拷贝是开辟一块新的内存地址，将原对象的各个属性逐个复制进去。对拷贝对象和源对象各自的操作互不影响。</p>
+</blockquote>
+<h3 id="实现浅拷贝"><a href="#实现浅拷贝" class="headerlink" title="实现浅拷贝"></a>实现浅拷贝</h3><p>之前一直有一个错误实现深拷贝的想法，就是<strong>遍历一个对象的k-v对并一一复制给另一个对象</strong>便可以实现<strong>深拷贝</strong>。</p>
+<p><strong>但是是错误的，这个是浅拷贝(shallowCopy)</strong></p>
+<p>原因很简单，当<code>K-V</code>对里<code>value</code>是<code>Object</code>的时候，复制过去便仍然是复制引用。比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">    a: 1,</div><div class="line">    b:&#123;</div><div class="line">        c: 2,</div><div class="line">        d: 3</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let obj2 = &#123;&#125;</div><div class="line"></div><div class="line">for(let item of Object.keys(obj))&#123;</div><div class="line">    obj2[item] = obj[item]</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj2.c = 2; </div><div class="line"></div><div class="line">obj2.c // 此时obj.c 变成了2</div></pre></td></tr></table></figure>
+<p>另外一点</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="external"><code>Object.assign</code></a>也是一个<code>shallowCopy</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span> , <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span>&#125;&#125;;</div><div class="line"> <span class="keyword">let</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></div><div class="line"> </div><div class="line"> obj1.a = <span class="number">1</span>;</div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 0&#125;&#125;</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></div><div class="line"> </div><div class="line"> obj2.a = <span class="number">2</span>;</div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 0&#125;&#125;</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 2, b: &#123; c: 0&#125;&#125;</span></div><div class="line"> </div><div class="line"> obj2.b.c = <span class="number">3</span>;</div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 3&#125;&#125;</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 2, b: &#123; c: 3&#125;&#125;</span></div></pre></td></tr></table></figure>
+<h3 id="如何实现深拷贝"><a href="#如何实现深拷贝" class="headerlink" title="如何实现深拷贝"></a>如何实现深拷贝</h3><ul>
+<li>方法一:<strong>JSON对象的parse和stringify</strong>(最简单的)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span> , <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span>&#125;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1));</div><div class="line"></div><div class="line">obj2.b.c = <span class="number">3</span>;</div><div class="line"><span class="built_in">console</span>.log(obj2.b.c); <span class="comment">// &#123; a: 0 , b: &#123; c: 3&#125;&#125;;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj1.b.c); <span class="comment">// &#123; a: 0 , b: &#123; c: 0&#125;&#125;;</span></div></pre></td></tr></table></figure>
+<p>该方法够处理JSON格式能表示的所有数据类型，但是无法拷贝对象里面的<code>函数</code>，<code>正则表达式</code>等，而且会丧失所有的<code>constructor</code>，也就是说，将是破坏整条<code>prototype</code>链。</p>
+<ul>
+<li>方法二：<strong>递归浅拷贝</strong></li>
+</ul>
+<p>刚才提到浅拷贝只能拷贝对象的一层，那么对浅拷贝进行递归便可以实现深拷贝。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span> (<span class="params">oldObj, newObj</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> oldObj)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> oldObj[key] != <span class="string">'object'</span>)&#123;</div><div class="line">            <span class="comment">// 是基本类型直接复制</span></div><div class="line">            newObj[key] = oldObj[key];</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            newObj[key] = oldObj[key].constructor == <span class="string">'[Function: Array]'</span>？[]:&#123;&#125;;</div><div class="line">            deepCopy(oldObj[key],newObj[key])</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments/callee" target="_blank" rel="external"><code>arguments.calle</code></a>可以在匿名函数中实现递归，此处也可以用<code>deepCopy(oldObj[key],newObj[key])</code>，该方法的缺陷是，一旦欲拷贝对象和原对象存在相互引用的情况，便可能造成死循环。(一直往下递归仍然判断为Object即造成死循环)所以需要加上判断跳出的语句</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> oldObj)&#123;</div><div class="line">    <span class="keyword">if</span>(newObj[key] === oldObj[key])&#123;</div><div class="line">        <span class="keyword">continue</span>;</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure>
+<ul>
+<li>方法三：借用工具库<code>loadash</code></li>
+</ul>
+<p><code>loadash</code>有一个<code>.cloneDeep</code>的方法可以实现深拷贝。</p>
+<p>使用方法：</p>
+<p><code>obj2 = _.cloneDeep(obj1);</code></p>
+<h3 id="综上："><a href="#综上：" class="headerlink" title="综上："></a>综上：</h3><ul>
+<li>基本类型变量存贮在栈内存区,存放在堆内存中的对象，变量保存的是一个指针。</li>
+<li>直接遍历对象一一复制是<code>浅拷贝</code>(shallowCopy)</li>
+<li>深拷贝即是在堆内存区拷贝出一个对象来。</li>
+<li>深拷贝当然更占内存，请一定要针对不同的场景做不同的拷贝处理。</li>
+</ul>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2017/12/16/js深拷贝与浅拷贝/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/07/gitflightrule/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
