@@ -12,7 +12,7 @@
     
     <title>
         
-            用nginx配置多个二级域名 | 
+            简单了解JavaScript垃圾回收机制 | 
         
         ACERY
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
-    <meta name="description" itemprop="description" content="转发配置">
-    <meta name="keywords" content="kepp it super simple,Server">
+    <meta name="description" itemprop="description" content="Garbage Collection">
+    <meta name="keywords" content="kepp it super simple,垃圾回收">
 
     <!-- Site Verification -->
     
@@ -67,26 +67,26 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="用nginx配置多个二级域名 | ACERY">
+    <meta property="og:title" content="简单了解JavaScript垃圾回收机制 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
-    <meta property="og:description" content="转发配置">
-    <meta property="og:article:tag" content="Server"> 
+    <meta property="og:description" content="Garbage Collection">
+    <meta property="og:article:tag" content="垃圾回收"> 
 
     
-        <meta property="article:published_time" content="9月 18, 2017" />
-        <meta property="article:modified_time" content="9月 18, 2017" />
+        <meta property="article:published_time" content="1月 26, 2018" />
+        <meta property="article:modified_time" content="1月 26, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="用nginx配置多个二级域名 | ACERY">
-    <meta name="twitter:description" content="转发配置">
+    <meta name="twitter:title" content="简单了解JavaScript垃圾回收机制 | ACERY">
+    <meta name="twitter:description" content="Garbage Collection">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.helloyzy.cn" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/2017/09/18/用nginx配置多个二级域名/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2018/01/26/JavaScript垃圾回收/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -112,11 +112,11 @@
         },
         "description": "kepp it super simple"
     },
-    "headline": "用nginx配置多个二级域名",
-    "url": "http://www.helloyzy.cn/2017/09/18/用nginx配置多个二级域名/index.html",
-    "datePublished": "9月 18, 2017",
-    "dateModified": "9月 18, 2017",
-    "description": "转发配置",
+    "headline": "简单了解JavaScript垃圾回收机制",
+    "url": "http://www.helloyzy.cn/2018/01/26/JavaScript垃圾回收/index.html",
+    "datePublished": "1月 26, 2018",
+    "dateModified": "1月 26, 2018",
+    "description": "Garbage Collection",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://www.helloyzy.cn"
@@ -324,7 +324,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nignx-配置文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">nignx 配置文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">2.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是GC"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是GC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么要使用GC"><span class="post-toc-number">3.</span> <span class="post-toc-text">为什么要使用GC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么要学点GC"><span class="post-toc-number">4.</span> <span class="post-toc-text">为什么要学点GC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#必备的基础概念"><span class="post-toc-number">5.</span> <span class="post-toc-text">必备的基础概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用的几种GC算法"><span class="post-toc-number">6.</span> <span class="post-toc-text">常用的几种GC算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#引用计数法"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">引用计数法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标记清除算法"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">标记清除算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#复制算法"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">复制算法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -362,7 +362,7 @@
         
     
             <p class="article-headline-p">
-                用nginx配置多个二级域名
+                简单了解JavaScript垃圾回收机制
             </p>
         </div>
 
@@ -381,7 +381,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>ACERY</strong>
-        <span>9月 18, 2017</span>
+        <span>1月 26, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -405,7 +405,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Server/">Server</a>
+        <a class="post_tag-link" href="/tags/垃圾回收/">垃圾回收</a>
     </ul>
     
 
@@ -448,41 +448,133 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>一个服务器上当然不可能只放一个服务，那么可以通过配置<code>nginx</code>服务器来实现转发，一般的有</p>
-<ul>
-<li>根据路径转发</li>
-<li>根据端口转发</li>
-</ul>
-<p>但是这两种都有一定的局限性，因为用户不可能自己去记某某服务器上的什么端口下有什么服务，如<code>http://www.helloyzy.cn:1998/test/api</code>,这样的一个URL是不容易被牢记，（开发人员都容易忘）所以我们需要用<code>nginx</code>来配置<code>二级域名</code>。</p>
-<p>使用前提：</p>
-<ul>
-<li>一台（云）服务器</li>
-<li>一个域名</li>
-<li>已装好nginx</li>
-</ul>
-<p>欲实现效果</p>
-<p><img src="https://git.oschina.net/vueman/md_pic/raw/8bb893282799e0b165ef915b1d5bb3efc44f0069/subdomain.png" alt=""></p>
-<p>当访问<code>www.helloyzy.cn</code>，会转发到路径为<code>/srv/www</code>上</p>
-<p>当访问<code>back.helloyzy.cn</code>,会转发到路径为<code>/srv/back</code>上</p>
-<p><strong>踩坑记录</strong></p>
-<blockquote>
-<p>一定要先给域名配置DNS解析，因为我们买来的域名是不带二级域名的，比如 helloyzy.cn，那如果要让别人能访问到<code>www.helloyzy.cn</code>和 <code>back.helloyzy.cn</code>，需要配置一个DNS解析（在服务器的管理界面有）<br>如果不配置，当你<code>ping www.helloyzy.cn</code>，将会提示<code>unknown host</code></p>
+        <blockquote>
+<p>注：本文主要针对初学GC的读者，笔者对于GC的了解比较疏漏，有学习的欲望但终究时间太少，为了达到一个大致了解的程度，才写笔记以理解之。文中有众多用词不当之处望读者指正。</p>
 </blockquote>
-<h2 id="nignx-配置文件"><a href="#nignx-配置文件" class="headerlink" title="nignx 配置文件"></a>nignx 配置文件</h2><p>一般情况下，所有的配置文件最好存在 <code>/nginx/conf.d</code>里，方便统一管理，在这地方，文件名就取二级域名的前缀，如 <code>service_www.conf</code> 和 <code>service_back.conf</code></p>
-<p><code>service_www.conf</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 80;</div><div class="line">	server_name www.helloyzy.cn;</div><div class="line">	root /srv/www;</div><div class="line">	index index.html index.htm;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>service_back.conf</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">	listen 80;</div><div class="line">	server_name back.helloyzy.cn;</div><div class="line">	root /srv/back;</div><div class="line">	index index.html index.htm;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在这里，可能有几个疑问：</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习并使用闭包的时候总会在各博客里面看到闭包的坏处有一条：</p>
+<blockquote>
+<p>使用不当的闭包将会在IE(IE9之前)中造成内存泄漏</p>
+</blockquote>
+<p>uhhh，为什么在IE9之前会造成这样的结果呢？我就开始继续寻找答案，找到一条比较满意的：</p>
+<blockquote>
+<p>IE9的JavaScript引擎使用的垃圾回收算法是<strong>引用计数法</strong>，对于循环引用将会导致GC无法回收“应该被回收”的内存。造成了无意义的内存占用，也就是内存泄漏。</p>
+</blockquote>
+<p>先科普一下：<strong>内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。</strong></p>
+<p><strong>那么，我有了以下几个疑问：</strong></p>
 <ul>
-<li>为什么都是监听80端口，换做其他端口会怎么样？</li>
-<li>两个同时监听80端口，不会冲突吗？</li>
+<li><strong>什么是循环引用？</strong></li>
+<li><strong>GC是什么？它是怎么工作的？</strong></li>
+<li><strong>为什么引用计数算法将会导致内存无法释放？</strong></li>
+<li><strong>JavaScript（或者说JavaScript引擎）还有多少垃圾回收算法?</strong></li>
 </ul>
-<p>问题一：</p>
-<p>因为当仅仅输入网站URL时，浏览器会默认带上<code>80</code>端口，比如当我们访问<code>www.baidu.com</code>其实是访问的<code>www.baidu.com:80</code>,所以我们设置80端口后，用户只需要输入<code>URL</code>便能够访问到</p>
-<p>问题二：</p>
-<p>主要原因是因为不同域，第一个配置文件监听的是<code>www.helloyzy.com</code>的80端口，而第二个配置文件监听的是<code>back.helloyzy.com</code>的80端口，这两个会被转发到不同的服务上,所以不会互相冲突。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>nginx 可以让我们拥有更多的二级域名，这就更方便我们对服务器上起的服务进行一个更规范，更逻辑化的管理。而这些管理配置是和服务的代码是<code>松耦合</code>的，处于较高层，一个很好的<code>nginx</code>配置规划，将极大的减少我们在代码本身上花的时间，比如<code>解决跨域</code>，<code>代理</code>，<code>转发</code>，<code>提供静态服务</code>等。</p>
+<p>所以我就“科学上网”去不存在的Google搜了一下“JS的垃圾回收机制”，但是，前5篇出来的结果一眼就能看出是互相粘贴复制别人博客的，里面无不提到这样一段话：</p>
+<blockquote>
+<p>在变量进入执行环境时，会添加一个进入标记，当变量离开时，会添加一个离开标记，标记清除是GC在运行时会给所有变量加上标记，然后去掉那些还在环境中或还被环境中变量引用的变量，清除剩下还被标记的所有变量。</p>
+</blockquote>
+<p>抱歉，我理解能力有限，不明白“离开标记”是什么，“然后去掉”是什么时候去掉的，具体怎么触发的还是自动运行的。对此，我只能：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/2.jpg" alt=""></p>
+<p>所以，不得不自己看书了，在图灵社区找到一本比较好的电子书<a href="http://www.ituring.com.cn/book/1460" target="_blank" rel="external">《垃圾回收的算法与实现》</a>，看了部分之后，基本对GC有了初步了解（起码知道是怎么工作的了）。</p>
+<p><strong>那么下面，就逐步解决之前提到的几点疑惑</strong>，并且用图文结合的方式给大家提供一个快速理解的方法。当然，建议最好还是能够去读一读上面提到的那边电子书。</p>
+<h3 id="什么是GC"><a href="#什么是GC" class="headerlink" title="什么是GC"></a>什么是GC</h3><p>GC是Garbage Collection的缩写，意为垃圾回收，Uhh，说到垃圾回收，我想到的是下面这个场景：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/1.jpg" alt=""></p>
+<p>对！就是这个，在现实生活中我们会产生很多垃圾，总有一群人在我们还在睡觉或者外出工作的时候悄无声息地把垃圾收走，那么对于程序也是这样的，在程序工作的过程中，总会产生很多’垃圾’，这些垃圾是<strong>程序不用的内存空间（可能是在之前用过了，以后不会再用的)</strong>。那么GC就是负责收走垃圾的，因为他工作在<strong>JavaScript引擎内部</strong>，所以对于我们前端开发者来说，GC在“一定程度上”是悄无声息工作的（注意此处的加引号部分）。</p>
+<p>那么，我们明确了<code>GC做什么</code>了：</p>
+<ul>
+<li>找到内存空间中的垃圾。</li>
+<li>回收垃圾，让程序员能再次利用这部分空间。</li>
+</ul>
+<p><strong>这里要注意的是</strong>，不是所有语言的世界里面都有<code>GC</code>,相对来说，高级语言里面一般会带GC，比如<code>Java</code>,<code>JavaScript</code>，<code>Python</code>，在没有GC的世界里，需要程序员手动管理内存，比如C语言我们常见的<code>malloc/free</code>，其实就是<code>memory allocation</code>的缩写。当然，还有C++里面的<code>new/delete</code>。</p>
+<p><strong>还有一点，GC是一门古老但不过时的技术，在1960年就首次发布了GC算法，但是时至今日，我们仍然需要研究更为优秀的GC算法来让程序“更优秀”。</strong></p>
+<h3 id="为什么要使用GC"><a href="#为什么要使用GC" class="headerlink" title="为什么要使用GC"></a>为什么要使用GC</h3><p>一句话：“省事儿”。</p>
+<blockquote>
+<p>省去开发者手动管理内存的麻烦（不是每个开发者都能管理好），从而减少BUG的产生，把精力留给更本质的编程工作。</p>
+</blockquote>
+<h3 id="为什么要学点GC"><a href="#为什么要学点GC" class="headerlink" title="为什么要学点GC"></a>为什么要学点GC</h3><p>一句话：“为了更好地找BUG”。</p>
+<blockquote>
+<p>作为前端开发者，其实是比较欠缺计算机体系知识的（以我自己举例），比如操作系统，计算机组成原理和计算机网络。但是这些知识，确实解决实际开发问题的根基所在，所以，有一个更好的基础能带来更快的开发/维护效率，而学习GC能为我们提供部分计算机体系知识的思想。比如”标记-清除法”就和操作系统页面置换<a href="https://baike.baidu.com/item/第二次机会算法/1872527?fr=aladdin" target="_blank" rel="external">第二次机会算法</a>类似，所以知识是融汇贯通的，这里我们接触了，那么以后需要学习更多知识的时候就会更得心应手。</p>
+</blockquote>
+<h3 id="必备的基础概念"><a href="#必备的基础概念" class="headerlink" title="必备的基础概念"></a>必备的基础概念</h3><ul>
+<li><strong>堆(HEAP)是用哦关于动态存放<code>对象</code>的内存空间</strong> 而<code>对象</code>在JavaScript里面是<code>引用类型</code>，之前在我的另一篇博客有讲<a href="http://www.helloyzy.cn/2017/11/05/js类型/">JavaScript的类型</a>。</li>
+<li><p><strong>mutator</strong>，这个词意思晦涩，在GC里面代表应用程序本身，我们暂且理解为<code>mutator</code>需要大量的内存。</p>
+</li>
+<li><p><strong>allocator</strong>，<strong>mutator</strong>将需要内存的申请提交到此，<code>allocator</code>负责从堆中调取足够内存空间供<code>mutator</code>使用。</p>
+</li>
+</ul>
+<p>一张图理解之：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/6.jpeg" alt=""></p>
+<ul>
+<li><strong>活动对象/非活动对象</strong>：代表通过<code>mutator</code>引用的对象，举个例子：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'bar'</span>&#125; <span class="comment">// '这个对象'被a引用，是活动对象。</span></div><div class="line"></div><div class="line"></div><div class="line">a=<span class="literal">null</span>; <span class="comment">// ‘这个对象’没有被a引用了，这个对象是非活动对象。</span></div></pre></td></tr></table></figure>
+<h3 id="常用的几种GC算法"><a href="#常用的几种GC算法" class="headerlink" title="常用的几种GC算法"></a>常用的几种GC算法</h3><h4 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h4><p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/4.jpeg" alt=""></p>
+<p>（图源自《垃圾回收算法和实现》）</p>
+<p>顾名思义，让所有对象实现记录下有多少“程序”在引用自己，让各对象都知道自己的“人气指数”。举一个简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">// 此时'这个对象'的引用计数为1（a在引用）</span></div><div class="line"><span class="keyword">var</span> b = a; <span class="comment">// ‘这个对象’的引用计数是2（a,b）</span></div><div class="line">a = <span class="literal">null</span>; <span class="comment">// reference_count = 1</span></div><div class="line">b = <span class="literal">null</span>; <span class="comment">// reference_count = 0 </span></div><div class="line"><span class="comment">// 下一步 GC来回收‘这个对象’了</span></div></pre></td></tr></table></figure>
+<p>这个方法有优势也有劣势：</p>
+<p><strong>优势</strong></p>
+<ol>
+<li><strong>可即刻回收垃圾</strong>，当被引用数值为0时，对象马上会把自己作为空闲空间连到空闲链表上，也就是说。在变成垃圾的时候就立刻被回收。</li>
+<li><strong>因为是即时回收,那么‘程序’不会暂停去单独使用很长一段时间的GC，那么最大暂停时间很短。</strong></li>
+<li><strong>不用去遍历堆里面的所有活动对象和非活动对象</strong></li>
+</ol>
+<p><strong>劣势</strong></p>
+<ol>
+<li><strong>计数器需要占很大的位置</strong>，因为不能预估被引用的上限，打个比方，可能出现32位即2的32次方个对象同时引用一个对象，那么计数器就需要32位。</li>
+<li><strong>最大的劣势是无法解决循环引用无法回收的问题</strong> 这就是前文中IE9之前出现的问题</li>
+</ol>
+<p>一个简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">  <span class="keyword">var</span> o2 = &#123;&#125;;</div><div class="line">  o.a = o2; <span class="comment">// o 引用 o2,o2的引用次数是1</span></div><div class="line">  o2.a = o; <span class="comment">// o2 引用 o,o的引用此时是1</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="string">"azerty"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">f();</div></pre></td></tr></table></figure>
+<p>fn在执行完成之后理应回收fn作用域里面的内存空间，但是因为<code>o</code>里面有一个属性引用<code>o2</code>,导致<code>o2</code>的引用次数始终为1，<code>o2</code>也是如此，而又非专门当做<code>闭包</code>来使用，所以这里就应该使<code>o</code>和<code>o2</code>被销毁。</p>
+<p>因为算法是将<code>引用次数为0</code>的对象销毁，此处都不为0，导致GC不会回收他们，那么这就是<code>内存泄漏</code>问题。</p>
+<blockquote>
+<p>该算法已经逐渐被 ‘标记-清除’ 算法替代，在V8引擎里面，使用最多的就是 <code>标记-清除算法</code></p>
+</blockquote>
+<h4 id="标记清除算法"><a href="#标记清除算法" class="headerlink" title="标记清除算法"></a>标记清除算法</h4><p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/3.png" alt=""></p>
+<p><strong>主要将GC的垃圾回收过程分为两个阶段</strong></p>
+<ul>
+<li>标记阶段：把所有活动对象做上标记。</li>
+<li>清除阶段：把没有标记（也就是非活动对象）销毁。</li>
+</ul>
+<p><strong>标记阶段</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/8.jpeg" alt=""></p>
+<p><strong>根</strong>可以理解成我们的全局作用域，GC从全局作用域的变量，沿作用域逐层往里遍历（对，是深度遍历），当遍历到堆中对象时，说明该对象被引用着，则打上一个标记，继续递归遍历（因为肯定存在堆中对象引用另一个堆中对象），直到遍历到最后一个（最深的一层作用域）节点。</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/9.jpeg" alt=""></p>
+<p>标记完成之后，就是这样的：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/7.jpeg" alt=""></p>
+<p><strong>清除阶段</strong></p>
+<p>又要遍历，这次是遍历整个堆，<strong>回收没有打上标记的对象</strong>。</p>
+<blockquote>
+<p>这里我们不细讲如何将获得的内存空间再分配的问题，这个地方有点类似磁盘管理或者内存管理，比如<code>best-fit,First-fit，Worst-fit</code>。以及<code>碎片化问题的产生和解决方法。</code></p>
+</blockquote>
+<p>这种方法可以解决循环引用问题，因为两个对象从全局对象出发无法获取。因此，他们无法被标记，他们将会被垃圾回收器回收。正如图：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/10.jpeg" alt=""></p>
+<p>优势：</p>
+<ul>
+<li>实现简单，打标记也就是打或者不打两种可能，所以就一位二进制位就可以表示</li>
+<li>解决了循环引用问题</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>造成碎片化（有点类似磁盘的碎片化）</li>
+<li>再分配时遍次数多，如果一直没有找到合适的内存块大小，那么会遍历空闲链表(保存堆中所有空闲地址空间的地址形成的链表）一直遍历到尾端</li>
+</ul>
+<p>这种GC方式是一个定时运行的任务，也就是说当程序运行一段时间后，统一GC，类似如图：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/12.jpg" alt=""></p>
+<h4 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h4><p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/5.jpg" alt=""></p>
+<p>复制算法配合这张图理解起来非常简单，就是只把某个空间的活动对象复制到其他空间。</p>
+<p>将一个内存空间分为两部分，一部分是From空间，另一部分是To空间，将From空间里面的活动对象复制到To空间，然后释放掉整个From空间，然后此刻将From空间和To空间的身份互换，那么就完成了一次GC。</p>
+<p>如图所示：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/GC/11.jpeg" alt=""></p>
+<p><strong>还有</strong></p>
+<p>还有几个GC算法，准备在下一篇博客用图解的方式总结一下V8实现的GC算法（复制，标记-清除，压缩）。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>回顾我们之前的问题</p>
+<ul>
+<li><strong>什么是循环引用？</strong></li>
+<li><strong>GC是什么？它是怎么工作的？</strong></li>
+<li><strong>为什么引用计数算法将会导致内存无法释放？</strong></li>
+<li><strong>JavaScript（或者说JavaScript引擎）还有多少垃圾回收算法?</strong></li>
+</ul>
+<p>好好想想我们是不是都应该有个比较清楚的答案了呢？</p>
 
     
 
@@ -498,7 +590,7 @@
     <!-- 使用 changyan -->
 <div id="changyan-comment">
     <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="2017/09/18/用nginx配置多个二级域名/"  ></div>
+<div id="SOHUCS" sid="2018/01/26/JavaScript垃圾回收/"  ></div>
 <script type="text/javascript">
 (function(){
 var appid = 'cytdDcOFu';
@@ -522,21 +614,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/09/18/利用内网穿透和nginx搭建一个良好的微信Web本地调试环境/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/09/17/getUserMedia 与 audioContext /" id="post_nav-older" class="next-content">
+        <a href="/2018/01/20/JavaScript异步/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
