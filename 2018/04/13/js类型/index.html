@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018 | 
+            浅析JavaScript语言的类型 | 
         
         ACERY
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ACERY">
     <meta name="description" itemprop="description" content="Talk Is Cheap">
-    <meta name="keywords" content="kepp it super simple">
+    <meta name="keywords" content="kepp it super simple,基础">
 
     <!-- Site Verification -->
     
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://www.helloyzy.cn">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | ACERY">
+    <meta property="og:title" content="浅析JavaScript语言的类型 | ACERY">
     <meta property="og:image" content="/img/icon.jpg" />
     <meta property="og:description" content="Talk Is Cheap">
-    
+    <meta property="og:article:tag" content="基础"> 
 
+    
+        <meta property="article:published_time" content="4月 13, 2018" />
+        <meta property="article:modified_time" content="4月 13, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018 | ACERY">
+    <meta name="twitter:title" content="浅析JavaScript语言的类型 | ACERY">
     <meta name="twitter:description" content="Talk Is Cheap">
     <meta name="twitter:image" content="/img/icon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://www.helloyzy.cn/archives/2018/index.html" />
+        <link rel="canonical" href="http://www.helloyzy.cn/2018/04/13/js类型/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "浅析JavaScript语言的类型",
+    "url": "http://www.helloyzy.cn/2018/04/13/js类型/index.html",
+    "datePublished": "4月 13, 2018",
+    "dateModified": "4月 13, 2018",
+    "description": "Talk Is Cheap",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
 
 
     
@@ -264,237 +297,302 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#值，变量-和类型的关系"><span class="post-toc-number">2.</span> <span class="post-toc-text">值，变量 和类型的关系</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined-与-not-defined"><span class="post-toc-number">3.</span> <span class="post-toc-text">undefined 与 not defined</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/13/js类型/">浅析JavaScript语言的类型</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            JavaScript的类型其实和我们在C/C++里面学的类型很不一样，在JavaSc...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/13/js类型/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>4月 13, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/JavaScript/">JavaScript</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/04/13/js类型/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/26/JavaScript垃圾回收/">简单了解JavaScript垃圾回收机制</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-注：本文主要针对初学GC的读者，笔者对于GC的了解比较疏漏，有学习的欲望但终究时间太少，为了达到一个大致了解的程度，才写笔...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/26/JavaScript垃圾回收/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>1月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/JavaScript/">JavaScript</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/01/26/JavaScript垃圾回收/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/20/JavaScript异步/">试图探寻JavaScript的异步设计</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            阅读本文，你将知道：
-
-同步和异步
-阻塞和非阻塞
-JavaScript的异步实现方式
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/20/JavaScript异步/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="ACERY's avatar">
-            </div>
-            <div>
-                <strong>ACERY</strong>
-                <span>1月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/JavaScript/">JavaScript</a>
-            </span>
-
-            
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span id = "sourceId::2018/01/20/JavaScript异步/" class = "cy_cmt_count" ></span>条评论
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                浅析JavaScript语言的类型
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>4月 13, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/基础/">基础</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><code>JavaScript</code>的类型其实和我们在<code>C/C++</code>里面学的类型很不一样，在<code>JavaScript</code>的世界里，变量起源于<code>var</code>(ES6 还有 let，const)。</p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p>有两组概念将编程语言分为多种类型，第一组是<code>强类型</code>与<code>弱类型</code>，第二组是<code>静态</code>与<code>动态</code>。</p>
+<p>简单解释来说：</p>
+<ul>
+<li>强类型：不容忍隐式转换。</li>
+<li>弱类型：容忍隐式转化。<code>C语言中 int 能隐式转换成 double</code></li>
+<li>静态类型：在编译阶段进行类型检查。</li>
+<li>动态类型：在运行阶段进行类型检查。</li>
+</ul>
+<p>后面两个概念可以这样理解：</p>
+<p>同样是:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a;</div><div class="line">a=<span class="string">"string"</span>;</div></pre></td></tr></table></figure>
+<p><strong>静态类型在编译阶段就不能通过，而动态类型在运行阶段才能检测出来。</strong></p>
+<p>有一个如下的坐标图用于划分：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/11.png" alt=""></p>
+<p><strong>注意<code>C,C++是弱类型的</code>，这和我们脑海中的固有印象是不一样的。</strong></p>
+<p>–</p>
+<p><strong>语言同样也分为编译型和解释型，但是这种分类关注的是<code>程序是如何运行的</code></strong></p>
+<ul>
+<li><strong>编译型：</strong>首先将编程语言翻译成机器语言，再由机器执行，以后多次运行程序都是运行的编译后的产物(也就是机器语言)。诸如C,C++</li>
+<li><strong>解释型：</strong>在运行的时候通过解释器来运行，每一次执行都需要解释器。</li>
+</ul>
+<p><strong>所以，就上面而言，我们可以将<code>JavaScript</code>视为<code>弱类型，动态解释型语言</code>,也叫做JavaScript脚本</strong></p>
+<blockquote>
+<p>脚本这个词用得极为巧妙，脚本这个词源于戏剧，就类似于安排的剧本，而脚本语言是边解释边执行，就好像是按照剧本进行表演一样。</p>
+</blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html" target="_blank" rel="external"></a></p>
+<p>理解<code>JavaScript</code>的类型，不能按照<code>强类型语言</code>的方式来理解，在<code>JavaScript</code>里，类型更像是一个<code>标签</code>的存在，你可以暂且理解为变量的实现都是一样的，只不过被贴了不同的标签。</p>
+<blockquote>
+<p>JS里，类型是值的内部特征，定义了值的行为，用于和其他值进行区分。</p>
+</blockquote>
+<p>JavaScript里有七种类型：</p>
+<ul>
+<li>null</li>
+<li>undefined</li>
+<li>boolean</li>
+<li>number</li>
+<li>string</li>
+<li>object</li>
+<li>symbol(ES6 新增）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'d'</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a) <span class="comment">// 'string'</span></div></pre></td></tr></table></figure>
+<p>根据变量的特点，可以分为以下两种：</p>
+<p>（1）基本类型：</p>
+<p>5种基本数据类型Undefined、Null、Boolean、Number 和 String，变量是直接按值存放的，存放在栈内存中的简单数据段，可以直接访问。</p>
+<p>（2）引用类型：</p>
+<p>存放在堆内存中的对象，变量保存的是一个指针，这个指针指向另一个位置。当需要访问引用类型（如对象，数组等）的值时，首先从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。</p>
+<p>用<code>typeof</code>运算符，可以用来判断值的类型，<strong>将会返回一个字符串</strong></p>
+<blockquote>
+<p>需要注意的是，typeof null === ‘object’ 将会返回true，要判断一个值的类型是否是null 要用 <code>!a &amp;&amp; typeof a ===&#39;object&#39;</code>,这个特性让开发者一般将<code>null</code>作为对象的placeholder(占位)</p>
+</blockquote>
+<p>比如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> num = <span class="number">0</span>;</div><div class="line"><span class="keyword">let</span> str = <span class="string">''</span>;</div><div class="line"><span class="keyword">let</span> obj = <span class="literal">null</span>; </div><div class="line"></div><div class="line"><span class="comment">// 这种在变量声明的时候赋上的初值一般就叫做placeholder</span></div></pre></td></tr></table></figure>
+<h2 id="值，变量-和类型的关系"><a href="#值，变量-和类型的关系" class="headerlink" title="值，变量 和类型的关系"></a>值，变量 和类型的关系</h2><p>之前的一段小代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// number</span></div></pre></td></tr></table></figure>
+<p>在这里，<code>a</code>明显是一个我们声明的变量，而正如我们之前提到的，<code>类型是值的一个标签</code>,那么<code>typeof</code>实际的作用就是去获取<code>a</code>这个变量里的值的<code>类型</code>标签。如：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/屏幕快照%202017-11-05%20下午8.40.37.png" alt=""></p>
+<p><strong>用面向对象的思路来想的话，就是变量<code>a</code>继承了<code>number</code>，而<code>number</code>里面有一个属性是<code>type</code>，里面保存了一个’number’的字符串，typeof 的作用是返回变量的type，而变量的type继承自number。所以就会返回<code>&#39;number&#39;</code></strong></p>
+<p>综上，变量本身没有类型的，类型都来自与值（方便理解的话，就理解为变量继承了值的类型，而值的类型是一个标签，用于和其他的值去区分)</p>
+<h2 id="undefined-与-not-defined"><a href="#undefined-与-not-defined" class="headerlink" title="undefined 与 not defined"></a>undefined 与 not defined</h2><p>经常容易出现的概念性错误。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;</div><div class="line"></div><div class="line">a; <span class="comment">// undefined</span></div><div class="line">b; <span class="comment">// ReferenctError: b is not defined.</span></div></pre></td></tr></table></figure>
+<p>在<code>c</code>语言里面，会去严格区分<code>声明(declared)</code>和<code>定义(defined)</code>,而在<code>JS</code>里，<code>is not defined</code>却会让人误以为是声明了没有定义的变量，但是实际上，却是没有声明，这个地方用<code>ReferenceError: b is not declared</code></p>
+<p>几张图帮助理解：</p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/1.png" alt=""></p>
+<p><strong>某开发者想要声明两个变量，一个值类型为number的A,一个值类型为string的B，他在程序里写了</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/2.png" alt=""></p>
+<p><strong>这个时候实际上就是<code>变量A</code>去<code>&#39;继承&#39;</code>了type为<code>&#39;undefined&#39;</code>的值，B没有声明,现在就不知道继承哪种值，称为<code>undeclared</code></strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/3.png" alt=""></p>
+<p><strong>这个时候这位开发者写入</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/4.png" alt=""></p>
+<p><strong>那么就变成了</strong></p>
+<p><img src="https://gitee.com/vueman/md_pic/raw/master/point/5.png" alt=""></p>
+<p><strong>所以此时<code>typeof A</code>会得到’number’，B目前存在于开发者的脑子里，所以为<code>undeclared</code></strong></p>
+<p><strong>综上所述</strong></p>
+<ul>
+<li>对于声明了没有定义的变量，默认<code>‘继承’</code>类型为<code>undefined</code>的值。</li>
+<li>对于声明了且定义过的变量，’继承’对应的值的类型。</li>
+<li>对于没有声明没有定义的变量，它是不存在的(或者说仅存于想象中)，它是<code>undeclared</code></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>JavaScript是弱类型动态解释型语言。</li>
+<li>JavaScript中的值有7种内置类型。</li>
+<li>值有类型，而变量没有，所以变量可以改变继承的值的类型，也就是变量可以在声明之后改变类型。</li>
+<li>区分<code>undefined</code>和<code>undeclared</code></li>
+<li><code>undefined</code>类型只有一个值，即<code>undefined</code>。同理<code>null</code>也是如此。而诸如<code>number</code>的类型有大量的值。</li>
+</ul>
+<p># </p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/04/13/js类型/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/26/JavaScript垃圾回收/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
