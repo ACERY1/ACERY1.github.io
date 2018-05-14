@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            小红花小程序项目总结 | 
+        
+        ACERY
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+        <link rel="dns-prefetch" href="https://changyan.sohu.com"/>
+    
+    
+        <link rel="dns-prefetch" href="https://hm.baidu.com"/>
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ACERY">
+    <meta name="description" itemprop="description" content="721">
+    <meta name="keywords" content="kepp it super simple,项目总结">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/icon.jpg">
+    <link rel="icon" sizes="192x192" href="/img/icon.jpg">
+    <link rel="apple-touch-icon" href="/img/icon.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ACERY">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://www.helloyzy.cn">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="小红花小程序项目总结 | ACERY">
+    <meta property="og:image" content="/img/icon.jpg" />
+    <meta property="og:description" content="721">
+    <meta property="og:article:tag" content="项目总结"> 
+
+    
+        <meta property="article:published_time" content="5月 14, 2018" />
+        <meta property="article:modified_time" content="5月 14, 2018" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="小红花小程序项目总结 | ACERY">
+    <meta name="twitter:description" content="721">
+    <meta name="twitter:image" content="/img/icon.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://www.helloyzy.cn" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://www.helloyzy.cn/2018/05/14/小红花项目总结/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ACERY",
+        "logo": "/img/icon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ACERY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/icon.jpg"
+        },
+        "description": "kepp it super simple"
+    },
+    "headline": "小红花小程序项目总结",
+    "url": "http://www.helloyzy.cn/2018/05/14/小红花项目总结/index.html",
+    "datePublished": "5月 14, 2018",
+    "dateModified": "5月 14, 2018",
+    "description": "721",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.helloyzy.cn"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?34616e4157c5d5b3e719e044e131ff00';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小红花小程序项目总结-Part-FE-by-acery1"><span class="post-toc-number">1.</span> <span class="post-toc-text">小红花小程序项目总结 Part FE by acery1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目简介"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">项目简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#我负责了前台小程序前端代码结构的基础设计和部分业务逻辑的实现。"><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">我负责了前台小程序前端代码结构的基础设计和部分业务逻辑的实现。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目中所遇到的难题以及解决方案"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">项目中所遇到的难题以及解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用图片过多造成上传的小程序包太大。"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">使用图片过多造成上传的小程序包太大。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何在每次请求接口前检测登录是否过期"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">如何在每次请求接口前检测登录是否过期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#样式开发速度太慢"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">样式开发速度太慢</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何保证一些工具的函数的正确性"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">如何保证一些工具的函数的正确性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对于登录注册的流程控制，总是会出现条件分支覆盖不全的情况。"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">对于登录注册的流程控制，总是会出现条件分支覆盖不全的情况。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在一些业务逻辑里，总会出现重复调用若干函数的情况，这个时候如何设计。"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">在一些业务逻辑里，总会出现重复调用若干函数的情况，这个时候如何设计。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在异步获取数据前总是提前加载了页面，使得数据空白给用户带来糟糕的产品体验。"><span class="post-toc-number">1.2.1.6.</span> <span class="post-toc-text">在异步获取数据前总是提前加载了页面，使得数据空白给用户带来糟糕的产品体验。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对用户访问页面的权限控制是针对接口做比较好还是针对页面做比较好。"><span class="post-toc-number">1.2.1.7.</span> <span class="post-toc-text">对用户访问页面的权限控制是针对接口做比较好还是针对页面做比较好。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#迭代比较紊乱，如何更好的进行多人合作开发"><span class="post-toc-number">1.2.1.8.</span> <span class="post-toc-text">迭代比较紊乱，如何更好的进行多人合作开发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单页面应用刷新造成的数据丢失问题"><span class="post-toc-number">1.2.1.9.</span> <span class="post-toc-text">单页面应用刷新造成的数据丢失问题</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#心得与体会"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">心得与体会</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一定要在开会之前开需求研讨会"><span class="post-toc-number">1.3.0.1.</span> <span class="post-toc-text">一定要在开会之前开需求研讨会</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#项目前期一定要好好设计，注意“破窗理论”"><span class="post-toc-number">1.3.0.2.</span> <span class="post-toc-text">项目前期一定要好好设计，注意“破窗理论”</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#底层代码一定要严格按照开放封闭原则，即对扩展开放，对修改封闭"><span class="post-toc-number">1.3.0.3.</span> <span class="post-toc-text">底层代码一定要严格按照开放封闭原则，即对扩展开放，对修改封闭</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CodeReview环节不能少"><span class="post-toc-number">1.3.0.4.</span> <span class="post-toc-text">CodeReview环节不能少</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单元测试的书写是为了更放心的使用你的代码"><span class="post-toc-number">1.3.0.5.</span> <span class="post-toc-text">单元测试的书写是为了更放心的使用你的代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#从各个角度入手优化产品体验"><span class="post-toc-number">1.3.0.6.</span> <span class="post-toc-text">从各个角度入手优化产品体验</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对小程序的工作流的赞誉"><span class="post-toc-number">1.3.0.7.</span> <span class="post-toc-text">对小程序的工作流的赞誉</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下次做项目前的思考"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">下次做项目前的思考</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据项目规模考虑是否设计widget层"><span class="post-toc-number">1.4.0.1.</span> <span class="post-toc-text">根据项目规模考虑是否设计widget层</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#接口配置化是否能做到可视化配置"><span class="post-toc-number">1.4.0.2.</span> <span class="post-toc-text">接口配置化是否能做到可视化配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#我做项目的目的是什么"><span class="post-toc-number">1.4.0.3.</span> <span class="post-toc-text">我做项目的目的是什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#该项目的主要用户是什么，是用新技术还是兼容性好的技术"><span class="post-toc-number">1.4.0.4.</span> <span class="post-toc-text">该项目的主要用户是什么，是用新技术还是兼容性好的技术</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何在项目的同时也能给自己充电"><span class="post-toc-number">1.4.0.5.</span> <span class="post-toc-text">如何在项目的同时也能给自己充电</span></a></li></ol></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                小红花小程序项目总结
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ACERY</strong>
+        <span>5月 14, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/项目总结/">项目总结</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="小红花小程序项目总结-Part-FE-by-acery1"><a href="#小红花小程序项目总结-Part-FE-by-acery1" class="headerlink" title="小红花小程序项目总结 Part FE by acery1"></a>小红花小程序项目总结 Part FE by acery1</h1><blockquote>
+<p>通过项目总结重现问题，并回溯解决方案。铭记7-2-1法则。</p>
+</blockquote>
+<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>本项目开始于2018年2月中旬，第一版上线时间在2018年4月下旬，历时开发时间为两个多自然月。开发人员有2个PM，2个UI，2个RD，2个FE。前端分为两个大部分：1. 小程序前台部分。2. PC后台部分。</p>
+<h4 id="我负责了前台小程序前端代码结构的基础设计和部分业务逻辑的实现。"><a href="#我负责了前台小程序前端代码结构的基础设计和部分业务逻辑的实现。" class="headerlink" title="我负责了前台小程序前端代码结构的基础设计和部分业务逻辑的实现。"></a>我负责了前台小程序前端代码结构的基础设计和部分业务逻辑的实现。</h4><p><strong>小程序前台使用的技术栈主要是<code>wepy</code></strong>，简单来说，<code>wepy</code>是类似于<code>Vue</code>的一个小程序组件化开发框架。</p>
+<p><strong>样式实现用的是<code>Sass</code></strong>，借鉴<code>BootStrap``Sass</code>源码部分的思想和<code>大漠</code>老师的博客（<a href="https://www.w3cplus.com/preprocessor/organize-your-sass-files.html" target="_blank" rel="external">组织你的Sass文件</a>），将样式进行<code>参数可配置化</code>，减少直接书写CSS造成的代码冗余。</p>
+<p><strong>在发送<code>ajax</code>请求的设计上</strong>，基于<code>wx.request</code>这个API，向上抽象封装了一层公用的<code>request</code>函数（代码<code>/src/API/ajax.js</code>)。作用是进行全局请求配置（<code>/src/API/config.js</code>）和全局错误拦截以及实现<code>身份过期后 用户无感知重连</code>的功能，同时，针对接口进一步抽象，最后抽象成一个配置文件（<code>/src/API/APIlist.js</code>），即添加一行配置即可在<code>wepy</code>里面使用。同时，设计了一个<code>DEBUG</code>环境，用于调用<code>mockjs</code>的模拟接口服务(<code>/src/API/mock/mockTemplates.js</code>)，即在后端未完成开发的时候也能进行对接口的预调试，让前后端开发可以完全并行。</p>
+<p><strong>在请求错误的处理上</strong>，设计了一个针对<code>statusCode</code>的<code>hook</code>(<code>/src/API/statusCodeFilter.js</code>)，维护一个<code>map</code>即可对不同的错误<code>statusCode</code>做不同的处理，而不用写进业务代码中。保证业务代码只关注业务以及底层函数调用。经常复用的函数实现细节一定要在底层。</p>
+<p><strong>组件化的设计</strong>：因为需要在所有的组件里面使用<code>工具函数</code>，<code>API接口</code>，<code>WX接口</code>，所以参考了<code>Vue.install</code>方法的设计。先设计一个基础的<code>wepy</code>组件作为<code>基组件</code>，并在该组件内注册三个方法。代码如下（<code>/src/pages/base/basicPage.wpy</code>）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/* 页面基类 */</div><div class="line">import wepy from &apos;wepy&apos;</div><div class="line">import API from &apos;../../API/index&apos;</div><div class="line">import * as UTIL from &apos;../../common/scripts/utils&apos;</div><div class="line">import * as WXUTIL from &apos;../../common/scripts/wxUtil&apos;</div><div class="line"></div><div class="line">export default class BasicPage extends wepy.page &#123;</div><div class="line">	$API = API // 全局安装API方法（已经更新）</div><div class="line">	$UTIL = UTIL // 全局工具函数</div><div class="line">	$WX = WXUTIL // 全局微信工具函数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样，之后所有的业务组件统一继承该基组件，就拥有这三个全局方法，而不用在每个组件里分别<code>import</code>，太麻烦且依赖关系变得复杂。在组件逻辑层上，设计了两层。即<code>components</code>和<code>page</code>，关系是<code>page</code>单向引用<code>components</code>。</p>
+<p><strong>对于微信提供的API接口</strong>，原则上是可以直接去使用的，但是为了进一步减少业务代码的外部依赖性，所以设计了一层<code>WXUTIL</code>层(<code>/src/common/scripts/wxUtil.js</code>)，即抽象一层函数，在函数内部调用WX的接口，而在组件内部调用函数，这样做的好处是：1. API变得友好（因为是你自己设计的）2. 可以进行封装，进行<code>参数扩展</code>和<code>参数压缩</code>。3. 统一维护。</p>
+<h2 id="项目中所遇到的难题以及解决方案"><a href="#项目中所遇到的难题以及解决方案" class="headerlink" title="项目中所遇到的难题以及解决方案"></a>项目中所遇到的难题以及解决方案</h2><p>####<code>wepy</code>暂时不支持<code>全局引入scss</code></p>
+<p>如果单独在每个文件中import，将会造成大量重复的<code>css</code>代码，而且因为微信对小程序的大小进行了限制（2048KB)，所以，如果你写了一个<code>base.scss</code>，而需要在每个组件中使用，那么假设有10个组件文件，就会有相同十份<code>base.scss</code>。</p>
+<p>目前的解决办法是：</p>
+<p>手动将需要的基本工具型（即改动不大且使用广泛）的scss源码进行编译生成css，然后改变其后缀为<code>.wxss</code>，并将其导入<code>wpy</code>的入口文件，如<code>app.wpy</code>(<code>./src/app.wpy</code>)。</p>
+<p>如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// app.wpy</div><div class="line">&lt;style lang=&quot;scss&quot; type=&quot;text/scss&quot;&gt;</div><div class="line">	/* 全局动画 */</div><div class="line">	@import &quot;./common/styles/ani.wxss&quot;;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h3 id="使用图片过多造成上传的小程序包太大。"><a href="#使用图片过多造成上传的小程序包太大。" class="headerlink" title="使用图片过多造成上传的小程序包太大。"></a>使用图片过多造成上传的小程序包太大。</h3><p>对于图片这类静态资源，最后进行全局配置一个<code>CDN</code>的url，然后在写<code>image</code>标签的时候引入这个参数。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;image :src = &quot;picURL&quot; &gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    export default class Home extends page &#123;</div><div class="line">        data = &#123;</div><div class="line">            picURL: this.$CDNURL + &apos;/hello.png&apos; // this.$CDNURL是page基组件内的一个配置变量</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    import wepy from &apos;wepy&apos;</div><div class="line">    export default class page extends wepy.page &#123;</div><div class="line">        data = &#123;</div><div class="line">            $CDNURL: &apos;http://cdn.wizztech.cn&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>这样，图片就不是在项目文件里，而是存储在CDN节点上，<strong>值得注意的是，需要保证URL正确，不然就会出现404的尴尬局面。</strong></p>
+<h4 id="如何在每次请求接口前检测登录是否过期"><a href="#如何在每次请求接口前检测登录是否过期" class="headerlink" title="如何在每次请求接口前检测登录是否过期"></a>如何在每次请求接口前检测登录是否过期</h4><p>在该项目里，登录状态的保持用的是<code>JWT</code>的方式，在<code>JWT</code>的<code>payload</code>里，后端传入了一个过期时间，之前因为没有使用<code>JWT</code>里数据的习惯，就索性采用函数递归的方式，如果请求失败（即403）就进行重登录，然后再请求接口。但是这样的设计造成的影响是<a href="https://github.com/TGclub/FLWAPP/issues/8" target="_blank" rel="external"><code>重登录后再次请求接口所生成的新Promise对象无法捕获</code></a>。后来采用的方案是<strong>在Promise里串行化首先检验当前时间是否过期，然后在.then里面进行后续的接口调用。如果没有过期，直接调用接口，如果已经过期，就先进行relogin，然后返回Promise.resolve</strong></p>
+<h4 id="样式开发速度太慢"><a href="#样式开发速度太慢" class="headerlink" title="样式开发速度太慢"></a>样式开发速度太慢</h4><p>之前一直是用SCSS来写一些<code>mixin</code>和<code>function</code>, 然后再也业务样式里面去引用这些<code>mixin</code>和<code>function</code>，但是这样同样是造成了代码的冗余。比如一个<code>垂直水平居中盒子</code>，我会定义一个<code>ximin</code>如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// mixin.scss</div><div class="line">@mixin allMidBox() &#123;</div><div class="line">	display: flex;</div><div class="line">	flex-flow: nowrap column;</div><div class="line">	justify-content: center;</div><div class="line">	align-items: center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// page.scss</div><div class="line"></div><div class="line">.box &#123;</div><div class="line">    @include allMidBox();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样虽然看起来简单，但是同样需要书写代码，定义<code>class</code>，所以，最好的做法是：</p>
+<ol>
+<li>底层定义<code>variables.scss</code>,<code>mixin.scss</code>, <code>util.scss</code></li>
+<li>中层定义一些通用<code>class</code>，如<code>.l-*</code>,<code>.t-*</code>等可以直接使用的<code>className</code>，但一定要注意命名被冲突了。</li>
+<li>上层在特殊情况下才定义className并写业务样式，同时也使用底层的<code>util.scss</code>和<code>mixin.scss</code></li>
+</ol>
+<p>具体可参考文章开头提到的<code>大漠</code>老师的博客以及学会<strong>BEM命名法</strong>。 代码位置可参考<code>/src/common/styles/</code>下的<code>scss源码</code>。PS： 一定要定义好<code>颜色/字体/margin/padding</code>的工具className，这样将可以极大的加快开发速度。</p>
+<h4 id="如何保证一些工具的函数的正确性"><a href="#如何保证一些工具的函数的正确性" class="headerlink" title="如何保证一些工具的函数的正确性"></a>如何保证一些工具的函数的正确性</h4><p>在项目中，用到了很多<code>输入格式验证</code>，<code>流程控制</code>等一些无上下文依赖的函数，所以能够进行简单地进行单元性测试，在该项目里，使用的是<code>mocha</code>前端测试框架<a href="http://www.mochajs.org" target="_blank" rel="external">链接</a>，需要自己书写<code>测试用例</code>。因为是单元测试，也比较简单，基本由开发者本身来自测。而不需要更多的QA介入该测试环节。代码文件请看<code>（/test）</code>.</p>
+<p>如下是一个简单的example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'验证是否为电话号码'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	it(<span class="string">'正确电话号码'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		expect(isPhoneNumber(<span class="number">18292039753</span>)).to.be.ok</div><div class="line">	&#125;)</div><div class="line">	it(<span class="string">'错误电话号码'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		expect(isPhoneNumber(<span class="number">10086</span>)).to.not.be.ok</div><div class="line">	&#125;)</div><div class="line">	it(<span class="string">'很长的号码'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		expect(isPhoneNumber(<span class="number">182920397533</span>)).to.not.be.ok</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="对于登录注册的流程控制，总是会出现条件分支覆盖不全的情况。"><a href="#对于登录注册的流程控制，总是会出现条件分支覆盖不全的情况。" class="headerlink" title="对于登录注册的流程控制，总是会出现条件分支覆盖不全的情况。"></a>对于登录注册的流程控制，总是会出现条件分支覆盖不全的情况。</h4><p><strong>采用<code>状态机</code></strong></p>
+<p>登录注册有非常多繁琐的流程以及判断，如</p>
+<ol>
+<li>未输入邀请码或者输入错误</li>
+<li>输入了正确格式的邀请码</li>
+<li>邀请码验证正确</li>
+<li>输入了正确格式的手机号</li>
+</ol>
+<p>…. </p>
+<p>对于如上的流程，如果用<code>if-else</code>来写，到后期开发迭代基本是没人能看得懂的代码（如果没有注释，那就是Only God Knows）</p>
+<p>对于这样的场景，可以有两种抽象模式：</p>
+<ol>
+<li>状态机模式：将登录注册的整个流程抽象成一个个独立的状态，如<code>state0</code>代表用户没有输入任何信息，<code>state1</code>代表用户输入了正确的手机号格式，<code>state2</code>代表用户输入了正确的手机号且发送了验证码 …. （具体代码参考<code>/src/pages/account/login.wpy</code>)</li>
+<li>抽象树：虽然没有直接在项目中使用这个方案，但是将整个流程想成一个树状结构且提前设计好这棵树，将不会出现覆盖不全所有条件分支的情况。下次准备在项目里进行实践。</li>
+</ol>
+<h4 id="在一些业务逻辑里，总会出现重复调用若干函数的情况，这个时候如何设计。"><a href="#在一些业务逻辑里，总会出现重复调用若干函数的情况，这个时候如何设计。" class="headerlink" title="在一些业务逻辑里，总会出现重复调用若干函数的情况，这个时候如何设计。"></a>在一些业务逻辑里，总会出现重复调用若干函数的情况，这个时候如何设计。</h4><p>仍然是设计成<code>状态</code>，比如如下的一个业务场景：</p>
+<blockquote>
+<p>在点击按钮之后，清楚所有按钮的状态，并且更新视图。</p>
+</blockquote>
+<p>如果不加以设计，基本就会写成如下的伪代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$btn.hide()</div><div class="line">$btn2.hide()</div><div class="line">$btn3.hide()</div><div class="line">$view.show()</div><div class="line">....</div></pre></td></tr></table></figure>
+<p>如果这样的逻辑在多个地方复用，那么就是会在<code>页面的主逻辑层</code>里出现大量分散的函数调用，这对于后期的代码修改以及新人上手非常不友好，所以，仍然采用<code>状态的设计</code>。</p>
+<p>如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 清除所有按钮的显示状态</span></div><div class="line"><span class="keyword">const</span> clearBtnState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    $btn.hide()</div><div class="line">    $btn2.hide()</div><div class="line">    $btn3.hide()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 主逻辑处</span></div><div class="line"><span class="keyword">this</span>.clearBtnState()</div></pre></td></tr></table></figure>
+<p>甚至可以在外部包装一层函数，如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const changeBtnState = (btn, fn) =&gt; &#123;</div><div class="line">    this.clearBtnState() // 每次在修改按钮状态的时候调用清除状态函数</div><div class="line">    btn.changeState()</div><div class="line">    fn.apply(this, arguments) // 执行回调 甚至可以返回Promise进行链式操作</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="在异步获取数据前总是提前加载了页面，使得数据空白给用户带来糟糕的产品体验。"><a href="#在异步获取数据前总是提前加载了页面，使得数据空白给用户带来糟糕的产品体验。" class="headerlink" title="在异步获取数据前总是提前加载了页面，使得数据空白给用户带来糟糕的产品体验。"></a>在异步获取数据前总是提前加载了页面，使得数据空白给用户带来糟糕的产品体验。</h4><p>部分渲染的数据是通过ajax请求获得，但是因为<code>http进程</code>和<code>渲染进程</code>可以异步进行的原因，导致在页面渲染的完成后，数据并没有获取完成（在网络较差的情况下极为明显）。从而在展现给用户完整的页面和默认数据后，又突然更新视图中的数据，让用户误以为是<code>BUG</code>。</p>
+<p>我们从三个维度进行了方案设计：</p>
+<ol>
+<li>减少请求次数。</li>
+<li>请求按照重要性进行排序串行化。</li>
+<li>增加过渡动画。</li>
+</ol>
+<p><strong>减少请求次数</strong> ：</p>
+<p>每发出一个<code>http</code>请求的消耗是巨大的，所以，我们最开始的方法就是从<code>减少请求次数</code>，<code>合并部分接口</code>，<code>提前请求接口</code>的方式出发，让用户在网络情况一般的时候也能快速的访问接口，从而让<code>渲染</code>和<code>数据请求</code>的时间间隔不长，来达到让用户无感知的效果。正因为小程序从一个<code>page</code>跳转到另一个<code>page</code>的<code>onLoad事件</code>前有<code>300ms</code>左右的延迟时间，所以可以在这个时间间隔内进行请求，具体实现需要写到父组件里，并且通过<code>props</code>传入子组件。</p>
+<p><strong>请求按照重要性进行排序串行化</strong>：</p>
+<p>在开发过程中，我们发现，部分请求的数据不需要即时渲染，所以可以放在异步渲染的过程。即<code>首屏渲染只渲染关键性数据和调用关键性接口</code>，其他的接口和数据渲染放到<code>Promise.then</code>进行串行化处理。</p>
+<p><strong>增加过渡动画</strong>：</p>
+<p>该方案是从用户角度出发的解决方案，让用户在等待的时候可以集中注意力。而不是选择离开该app，目前在<code>小红花项目里</code>没有实现该方案，最开始是认为因为<code>框架选型</code>的原因造成没法去实现，就在写该总结的时候，有了一个方案：</p>
+<p>正如上文所提到的<code>继承基页面</code>，可以做一个<code>状态的监听</code>，通过组件传参的方式改变基页面的状态。比如在开始的时候<code>基页面</code>的状态为<code>&#39;loading&#39;</code>,在串行化执行完关键接口后，使用<code>$emit</code>向该组件发出信号，展示其页面。这样即可以实现加载完成数据后渲染拥有数据的组件。</p>
+<blockquote>
+<p>下一个迭代首先做该需求。</p>
+</blockquote>
+<h4 id="对用户访问页面的权限控制是针对接口做比较好还是针对页面做比较好。"><a href="#对用户访问页面的权限控制是针对接口做比较好还是针对页面做比较好。" class="headerlink" title="对用户访问页面的权限控制是针对接口做比较好还是针对页面做比较好。"></a>对用户访问页面的权限控制是针对接口做比较好还是针对页面做比较好。</h4><p>因为用户涉及到<code>导师</code>，<code>学生</code>，<code>游客</code>三个身份，所以对于这三个角色，是有不同的权限控制。如下场景：</p>
+<blockquote>
+<p>游客无法查看学生的个人主页，如果查看，就跳转到’登录注册页面’</p>
+</blockquote>
+<p>经过实践得知，针对页面做权限控制是比较好的，针对接口做可以仍然出现异步造成的未知问题以及针对接口做粒度太细，在大量接口的项目里不太适用。</p>
+<h4 id="迭代比较紊乱，如何更好的进行多人合作开发"><a href="#迭代比较紊乱，如何更好的进行多人合作开发" class="headerlink" title="迭代比较紊乱，如何更好的进行多人合作开发"></a>迭代比较紊乱，如何更好的进行多人合作开发</h4><p>使用<code>git-flow</code>,<a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow" target="_blank" rel="external">链接</a>，这是<a href="https://segmentfault.com/a/1190000002918123" target="_blank" rel="external">gitflow的概念</a>。</p>
+<ol>
+<li>保持<code>master</code>分支只能从其他分支合并而不能直接修改。除非是特别紧急的<code>bug</code>。</li>
+<li>主要工作在<code>develop</code>分支上。</li>
+<li>如果已经进行了<code>release1.0</code>的发布，之后的需求就不要在<code>develop</code>分支上直接开发，而是新起对应的<code>feature</code>分支，测试通过后就往<code>develop</code>分支上合并，然后人工审核并合并到<code>master</code>再进行发布流程。</li>
+</ol>
+<h4 id="单页面应用刷新造成的数据丢失问题"><a href="#单页面应用刷新造成的数据丢失问题" class="headerlink" title="单页面应用刷新造成的数据丢失问题"></a>单页面应用刷新造成的数据丢失问题</h4><p>在该项目之前，如果一个子组件需要从父组件获取一个参数，并且在子组件内通过该参数发送请求并渲染数据。为了防止刷新带来的<strong>丧失父组件参数问题</strong>，我会将该<strong>父组件参数</strong>存入一个全局的状态管理里或者sessionStorage里。这样虽然能解决<strong>刷新造成的数据丢失问题</strong>，但是却要手动清除这些中间数据。显得十分繁琐。</p>
+<p>后来在写Vue的时候，发现Vue-router是可以通过<code>route.params</code>获取路由参数。如在前端路由route跳转到<code>/test/12</code>，就可以通过<code>this.$route.params</code>取到<code>12</code></p>
+<p>所以，以后在SPA进行页面跳转的时候，将这些<code>中间数据</code>和<code>害怕刷新而失去的数据</code>写进URL参数里。</p>
+<h2 id="心得与体会"><a href="#心得与体会" class="headerlink" title="心得与体会"></a>心得与体会</h2><h4 id="一定要在开会之前开需求研讨会"><a href="#一定要在开会之前开需求研讨会" class="headerlink" title="一定要在开会之前开需求研讨会"></a>一定要在开会之前开需求研讨会</h4><p>开发者最害怕的是在需求还没敲定的情况下盲目地进行开发，因为有些需求一改，涉及到可能是整个底层项目设计的变化。如果在需求研讨会就迫不及待地去做开发，是一个高风险行为。<strong>所以，一定要等PM梳理需求，设计原型并和开发一起开完需求研讨会之后再进行开发。且要对需求进行工期预估和排期。</strong></p>
+<h4 id="项目前期一定要好好设计，注意“破窗理论”"><a href="#项目前期一定要好好设计，注意“破窗理论”" class="headerlink" title="项目前期一定要好好设计，注意“破窗理论”"></a>项目前期一定要好好设计，注意“破窗理论”</h4><p>数次项目设计带来的惨痛教训是，前期觉得花时间而不好好设计，后期将会造成数倍时间的损失。所以，前期的设计一定要考虑周到，从对<code>开发友好性</code>，<code>可扩展性</code>，<code>安全性</code>，<code>稳定性</code>，<code>复用性</code>来设计。还有，一定要整洁自己的代码同时严格要求各个开发者。<strong>破窗理论是</strong>：<code>此理论认为环境中的不良现象如果被放任存在，会诱使人们仿效，甚至变本加厉。一幢有少许破窗的建筑为例，如果那些窗不被修理好，可能将会有破坏者破坏更多的窗户。</code> 在代码里面也是这样，只要有一个人对代码整洁不负责，那么大家都不会负责了，之后的代码就基本上是<code>shit code</code>了。</p>
+<h4 id="底层代码一定要严格按照开放封闭原则，即对扩展开放，对修改封闭"><a href="#底层代码一定要严格按照开放封闭原则，即对扩展开放，对修改封闭" class="headerlink" title="底层代码一定要严格按照开放封闭原则，即对扩展开放，对修改封闭"></a>底层代码一定要严格按照<code>开放封闭原则</code>，即<code>对扩展开放，对修改封闭</code></h4><p>如果你在底层写了一个方法库，并且被多个开发者使用，这个时候切记不能对这些方法进行修改，哪怕是修改了某函数的传入参数，产生的隐患都是很难去预估的。所以，如果你觉得之前你写的某方法不太适用你当下的业务场景（而这方法已经被广泛使用）这个时候最好<strong>扩展一个新函数并使用</strong>而不是<strong>修改原来的函数</strong>。</p>
+<h4 id="CodeReview环节不能少"><a href="#CodeReview环节不能少" class="headerlink" title="CodeReview环节不能少"></a>CodeReview环节不能少</h4><p>如果是多人开发，每隔一段时间可以去看看别人的代码。因为JavaScript语言的灵活性，导致一个功能的实现方式可以有很多种，所以，通过看别人的代码是一条扩展自己实现思路的捷径。</p>
+<h4 id="单元测试的书写是为了更放心的使用你的代码"><a href="#单元测试的书写是为了更放心的使用你的代码" class="headerlink" title="单元测试的书写是为了更放心的使用你的代码"></a>单元测试的书写是为了更放心的使用你的代码</h4><p>有些时候自己写的函数没有经过测试都不太敢使用，而如果在业务代码进行单元测试，可能会在之后上线的时候忘掉去掉这些DEBUG用的代码。所以，最好将测试代码和业务代码分开是最好的，分开的最好方案就是独立进行单元测试。</p>
+<h4 id="从各个角度入手优化产品体验"><a href="#从各个角度入手优化产品体验" class="headerlink" title="从各个角度入手优化产品体验"></a>从各个角度入手优化产品体验</h4><p>一个极小的优化可能涉及到的是众多方案的叠加效果。举一个很简单的例子，如何优化图片的加载。就可以从<code>将图片部署到CDN</code>，<code>图片压缩方案</code>，<code>图片懒加载方案</code>，<code>图片预加载方案</code>等入手。所以，当要去解决一个技术问题的时候，不要让自己的思路变得狭窄。多变通。黑猫白猫，能抓住老鼠的才是好猫。编程是挺培养解决问题的能力的。所在，在使用搜索引擎获取解决方案之前，先在脑子里设计一下你认为可行的解决方案。</p>
+<h4 id="对小程序的工作流的赞誉"><a href="#对小程序的工作流的赞誉" class="headerlink" title="对小程序的工作流的赞誉"></a>对小程序的工作流的赞誉</h4><p>在开发小程序的过程中，感觉到的最好的地方就是上传预览功能，即只要开发者上传小程序包到微信的服务器，就可以让测试人员跟进测试。而在之前我开发web app的经历里，自己手动打包上传或者打包将代码发送给后端，在开发后期占了40%的时间。太低效了。而小程序做到的，就是让打包部署这两步对开发者不可见，让小程序开发者只关注业务逻辑，这样就让整个小程序的迭代速度变得非常的快。而且小程序不像native app，需要在各平台逐一发布，而是在微信公众平台发布即可。就这两点我认为是小程序的开发工作流里面最出彩的两点。</p>
+<h2 id="下次做项目前的思考"><a href="#下次做项目前的思考" class="headerlink" title="下次做项目前的思考"></a>下次做项目前的思考</h2><h4 id="根据项目规模考虑是否设计widget层"><a href="#根据项目规模考虑是否设计widget层" class="headerlink" title="根据项目规模考虑是否设计widget层"></a>根据项目规模考虑是否设计<code>widget层</code></h4><p>目前采用的组件化设计仍然是<code>component --&gt; pages</code>，但是在一些业务场景下，某些业务组件的复用性较强，所以一般可以设计为<code>component ---&gt; widget ---&gt; pages</code>，这样的设计的目的是让<strong>业务可复用</strong>。</p>
+<h4 id="接口配置化是否能做到可视化配置"><a href="#接口配置化是否能做到可视化配置" class="headerlink" title="接口配置化是否能做到可视化配置"></a>接口配置化是否能做到可视化配置</h4><p>目前对于ajax的设计已经做到了抽象成一个配置文件，而配置文件本身是一些数据格式相同的JSON数据。下一步的想法这做一个简单的API系统，如果是web就基于XMLHttpRequest来写，如果是小程序就基于<code>wx.request</code>来写。做到可视化添加后端接口。</p>
+<h4 id="我做项目的目的是什么"><a href="#我做项目的目的是什么" class="headerlink" title="我做项目的目的是什么"></a>我做项目的目的是什么</h4><p>是为了学习还是为了报酬，一定要想好。</p>
+<h4 id="该项目的主要用户是什么，是用新技术还是兼容性好的技术"><a href="#该项目的主要用户是什么，是用新技术还是兼容性好的技术" class="headerlink" title="该项目的主要用户是什么，是用新技术还是兼容性好的技术"></a>该项目的主要用户是什么，是用新技术还是兼容性好的技术</h4><p>看该项目的主要使用人群的消费水平如何，如果是属于中高端人群，可以考虑使用新技术。如果是中低端消费人群，考虑高兼容性的技术是可取的。当然，<strong>渐近线增加体验</strong>是最完美的解决方案。</p>
+<h4 id="如何在项目的同时也能给自己充电"><a href="#如何在项目的同时也能给自己充电" class="headerlink" title="如何在项目的同时也能给自己充电"></a>如何在项目的同时也能给自己充电</h4><blockquote>
+<p>简言之，将你的代码总结成文章。</p>
+</blockquote>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 changyan -->
+<div id="changyan-comment">
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="2018/05/14/小红花项目总结/"  ></div>
+<script type="text/javascript">
+(function(){
+var appid = 'cytdDcOFu';
+var conf = 'rod_4340c79313c9a68e632c8b91a0fd1e0f';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+</div>
+<style>
+    #changyan-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/13/移动端适配/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ACERY's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        y841034081@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="https://github.com/ACERY1" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/CSS/">CSS<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Docker/">Docker<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/JavaScript/">JavaScript<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/cheatsheet/">cheatsheet<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/cloud/">cloud<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/学习/">学习<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/开发环境配置/">开发环境配置<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/服务器/">服务器<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/项目总结/">项目总结<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/gallery" title="相册">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                相册
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/timeline" title="时光">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                时光
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                标签
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/links" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">23</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/ACERY1" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ACERY
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 畅言公共 js 代码 start -->
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytdDcOFu">
+</script>
+<!-- 畅言公共 js 代码 end -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
